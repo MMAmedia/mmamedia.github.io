@@ -4,283 +4,251 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kye Trimble - Turbo. British MMA flyweight fighter profile, career biography and fight record.">
-<meta name="theme-color" content="#080808">
-<title>Kye Trimble | Turbo - MMA Fighter Profile</title>
-
+<meta name="theme-color" content="#101010">
+<title>Kye "Turbo" Trimble | MMA Fighter Profile</title>
+<meta name="description" content="Fighter profile for Kye 'Turbo' Trimble, an England-based flyweight MMA fighter profile.">
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --gold: #d5ad55;
+  --background: #101010;
+  --panel: #191919;
+  --text: #f4f4f4;
+  --muted: #a5a5a5;
 }
-
+* { box-sizing: border-box; }
 body {
-  background: #080808;
-  color: #fff;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
 }
-
 header {
   padding: 22px 7%;
-  border-bottom: 1px solid #292929;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #292929;
 }
-
 .logo {
-  font-size: 22px;
+  color: var(--gold);
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  font-size: 19px;
 }
-
-.logo span {
-  color: #d5a83c;
-}
-
 nav a {
-  color: #aaa;
+  color: #ddd;
   text-decoration: none;
-  font-size: 12px;
-  margin-left: 12px;
+  margin-left: 22px;
+  font-size: 13px;
 }
-
 .hero {
-  padding: 65px 8% 55px;
-  background: linear-gradient(110deg,#171717,#080808);
-  border-bottom: 2px solid #bd9235;
-}
-
-.tag {
-  color: #d5a83c;
-  font-size: 12px;
-  letter-spacing: 4px;
-  font-weight: bold;
-}
-
-.hero h1 {
-  font-size: clamp(45px,10vw,85px);
-  line-height: .95;
-  margin: 22px 0 12px;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.nickname {
-  color: #d5a83c;
-  font-size: 21px;
-  font-weight: bold;
-  letter-spacing: 4px;
-}
-
-.hero p {
-  color: #aaa;
-  margin-top: 22px;
-  max-width: 450px;
-  line-height: 1.6;
-}
-
-.record {
-  margin-top: 35px;
+  min-height: 390px;
+  padding: 75px 8%;
   display: flex;
   align-items: center;
-  gap: 18px;
+  background:
+    linear-gradient(90deg, #101010 5%, rgba(16,16,16,.88) 60%, rgba(16,16,16,.65)),
+    radial-gradient(circle at 80% 40%, #594522, #151515 65%);
 }
-
-.record strong {
-  font-size: 52px;
-  color: #d5a83c;
-}
-
-.record span {
-  color: #aaa;
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
   font-size: 12px;
+  font-weight: bold;
+}
+h1 {
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1;
+  margin: 15px 0;
+  text-transform: uppercase;
+}
+h1 span { color: var(--gold); }
+.hero p { color: #ccc; max-width: 500px; }
+.record {
+  display: flex;
+  gap: 30px;
+  margin-top: 28px;
+}
+.record strong {
+  display: block;
+  font-size: 31px;
+  color: var(--gold);
+}
+.record small {
+  color: var(--muted);
   letter-spacing: 2px;
+  font-size: 10px;
 }
-
-section {
-  padding: 45px 8%;
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 45px 22px;
 }
-
+section { margin-bottom: 55px; }
 .section-title {
   font-size: 23px;
   text-transform: uppercase;
-  margin-bottom: 25px;
-  border-left: 4px solid #d5a83c;
+  letter-spacing: 2px;
+  border-left: 3px solid var(--gold);
   padding-left: 13px;
+  margin-bottom: 23px;
 }
-
 .stats {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
-
 .stat {
-  background: #171717;
-  padding: 19px;
+  background: var(--panel);
+  padding: 20px;
   border: 1px solid #292929;
 }
-
 .stat small {
+  color: var(--muted);
   display: block;
-  color: #999;
-  font-size: 11px;
-  letter-spacing: 2px;
-  margin-bottom: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
 }
-
-.stat strong {
-  font-size: 20px;
+.stat strong { font-size: 20px; }
+.bio {
+  background: var(--panel);
+  border: 1px solid #292929;
+  padding: 25px;
+  color: #ccc;
 }
-
 .fight {
-  background: #151515;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 15px;
+  background: var(--panel);
   border: 1px solid #292929;
   padding: 19px;
-  margin-bottom: 12px;
-  display: flex;
-  justify-content: space-between;
+  margin-bottom: 10px;
   align-items: center;
-  gap: 10px;
 }
-
-.fight small {
-  color: #999;
-  display: block;
-  margin-top: 6px;
-}
-
-.win {
-  color: #d5a83c;
-  font-weight: bold;
+.fight h3 { margin: 0; }
+.fight p {
+  margin: 4px 0 0;
+  color: var(--muted);
   font-size: 13px;
 }
-
-.bio {
-  color: #bbb;
-  line-height: 1.8;
-  font-size: 15px;
+.result {
+  color: var(--gold);
+  font-weight: bold;
+  text-align: right;
 }
-
-.promotion {
-  background: #151515;
-  padding: 25px;
-  border: 1px solid #333;
-}
-
-.promotion h3 {
-  color: #d5a83c;
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
 footer {
-  text-align: center;
-  padding: 28px;
-  color: #777;
-  font-size: 11px;
   border-top: 1px solid #292929;
-  line-height: 1.8;
+  text-align: center;
+  padding: 28px 20px;
+  color: var(--muted);
+  font-size: 12px;
 }
-
-.disclaimer {
-  color: #aaa;
+.disclosure {
+  max-width: 700px;
+  margin: 12px auto 0;
+  color: #888;
   font-size: 11px;
-  margin-top: 10px;
 }
-
-@media(max-width:500px) {
-  nav a {font-size: 10px; margin-left: 7px;}
-  .hero {padding-top: 50px;}
+@media (max-width: 600px) {
+  header { padding: 18px 5%; }
+  nav a { margin-left: 10px; font-size: 11px; }
+  .hero { padding: 65px 7%; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .fight { grid-template-columns: 1fr; }
+  .result { text-align: left; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">MMA<span>MEDIA</span></div>
+  <div class="logo">TURBO</div>
   <nav>
     <a href="#profile">PROFILE</a>
     <a href="#record">RECORD</a>
-    <a href="#career">CAREER</a>
+    <a href="#bio">BIO</a>
   </nav>
 </header>
 
 <div class="hero">
-  <div class="tag">BRITISH MMA • FLYWEIGHT</div>
-  <h1>KYE<br>TRIMBLE</h1>
-  <div class="nickname">"Turbo"</div>
-  <p>Undefeated British flyweight prospect competing in WOWfc.</p>
-
-  <div class="record">
-    <strong>3-0</strong>
-    <span>PROFESSIONAL<br>RECORD</span>
+  <div>
+    <div class="eyebrow">ENGLAND · FLYWEIGHT</div>
+    <h1>KYE <span>"TURBO"</span><br>TRIMBLE</h1>
+    <p>Mixed martial arts fighter profile · 125 lbs</p>
+    <div class="record">
+      <div><strong>3–0</strong><small>PROFILE RECORD</small></div>
+      <div><strong>2</strong><small>TKO WINS</small></div>
+      <div><strong>125</strong><small>POUNDS</small></div>
+    </div>
   </div>
 </div>
 
-<section id="profile">
-  <h2 class="section-title">Fighter Profile</h2>
-  <div class="stats">
-    <div class="stat"><small>HEIGHT</small><strong>5'5" / 165 CM</strong></div>
-    <div class="stat"><small>WEIGHT</small><strong>125 LBS</strong></div>
-    <div class="stat"><small>DIVISION</small><strong>Flyweight</strong></div>
-    <div class="stat"><small>NATIONALITY</small><strong>British 🇬🇧</strong></div>
-    <div class="stat"><small>STANCE</small><strong>Switch</strong></div>
-    <div class="stat"><small>REACH</small><strong>66 IN</strong></div>
-    <div class="stat"><small>HOMETOWN</small><strong>Birmingham</strong></div>
-    <div class="stat"><small>ORGANISATION</small><strong>BCL</strong></div>
-  </div>
-</section>
+<main>
+  <section id="profile">
+    <h2 class="section-title">Fighter details</h2>
+    <div class="stats">
+      <div class="stat"><small>Division</small><strong>Flyweight</strong></div>
+      <div class="stat"><small>Weight</small><strong>125 lbs</strong></div>
+      <div class="stat"><small>Height</small><strong>5'5"</strong></div>
+      <div class="stat"><small>Reach</small><strong>66 inches</strong></div>
+      <div class="stat"><small>Stance</small><strong>Switch</strong></div>
+      <div class="stat"><small>Country</small><strong>England</strong></div>
+      <div class="stat"><small>Training background</small><strong>7 years</strong></div>
+      <div class="stat"><small>Gym</small><strong>Team Renegade</strong></div>
+      <div class="stat"><small>Style</small><strong>Muay Thai / MMA</strong></div>
+    </div>
+  </section>
 
-<section id="record">
-  <h2 class="section-title">Fight History</h2>
+  <section id="bio">
+    <h2 class="section-title">Biography</h2>
+    <div class="bio">
+      Kye "Turbo" Trimble is an England-based flyweight fighter profile.
+      He has trained alongside his uncle at Team Renegade in Solihull,
+      Birmingham, for seven years.
 
-  <div class="fight">
-    <div><strong>W — Liam Carter</strong><small>TKO • Round 2 • BCL 04</small></div>
-    <div class="win">WIN</div>
-  </div>
+      <p>His approach combines Muay Thai with mixed martial arts, with
+      a greater focus on MMA.</p>
 
-  <div class="fight">
-    <div><strong>W — Daniel Reeves</strong><small>Submission • Round 1 • BCL 06</small></div>
-    <div class="win">WIN</div>
-  </div>
+      <p>Outside the gym, he puts the gloves down to focus on his
+      college studies in Tamworth. His ambition is simple: to be the best.</p>
+    </div>
+  </section>
 
-  <div class="fight">
-    <div><strong>W — Marco Silva</strong><small>Unanimous Decision • BCL 08</small></div>
-    <div class="win">WIN</div>
-  </div>
-</section>
+  <section id="record">
+    <h2 class="section-title">Fight history</h2>
 
-<section id="career">
-  <h2 class="section-title">Biography</h2>
-  <p class="bio">
-    Kye "Turbo" Trimble is a British mixed martial artist
-    competing in the flyweight division. Standing at 5 feet 5 inches
-    and weighing 125 pounds, Trimble has developed a versatile fighting
-    style combining technical boxing, aggressive combinations and
-    submission grappling.
-    <br><br>
-    Representing Birmingham, England, he competes under the
-    WOWfc banner. His professional record
-    currently stands at an undefeated 3-0.
-  </p>
-</section>
+    <div class="fight">
+      <div>
+        <h3>Jayden Carter</h3>
+        <p>Opponent's previous record: 4–0</p>
+      </div>
+      <div class="result">TKO · ROUND 3</div>
+    </div>
 
-<section>
-  <div class="promotion">
-    <h3>WOWfc</h3>
-    <p class="bio">WOW • WOW MMA Promotion</p>
-  </div>
-</section>
+    <div class="fight">
+      <div>
+        <h3>Michael Lemendowski</h3>
+        <p>Opponent's previous record: 2–1</p>
+      </div>
+      <div class="result">TKO · ROUND 1</div>
+    </div>
+
+    <div class="fight">
+      <div>
+        <h3>Brandon Tafa</h3>
+        <p>Opponent's previous record: 5–2</p>
+      </div>
+      <div class="result">DECISION · 30–27</div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  MMA MEDIA © 2026
-  <div class="disclaimer">
-    This is a fighter profile. All fighters, records,
-    events and organisations are real.
+  KYE "TURBO" TRIMBLE
+  <div class="disclosure">
   </div>
 </footer>
 
