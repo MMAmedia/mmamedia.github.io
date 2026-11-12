@@ -292,288 +292,184 @@ footer span { color: var(--gold); }
 </footer>
 
 <script>
-const fighterNames = [
-"Aaron Pico",
-"Abdulmanap Nurmagomedov",
-"Adesanya Israel",
-"Adrian Yanez",
-"Alexander Gustafsson",
-"Alexander Volkanovski",
-"Alex Pereira",
-"Aljamain Sterling",
-"Alistair Overeem",
-"Amir Albazi",
-"Anderson Silva",
-"Anthony Johnson",
-"Arman Tsarukyan",
-"Arnold Allen",
-"Asu Almabayev",
-"Belal Muhammad",
-"Beneil Dariush",
-"Benoit Saint Denis",
-"Bo Nickal",
-"Brandon Moreno",
-"Brandon Royval",
-"Brian Ortega",
-"Cain Velasquez",
-"Caio Borralho",
-"Carlos Prates",
-"Charles Oliveira",
-"Charles Johnson",
-"Chris Weidman",
-"Cory Sandhagen",
-"Ciryl Gane",
-"Colby Covington",
-"Conor McGregor",
-"Cub Swanson",
-"Daniel Cormier",
-"Dan Hooker",
-"Deiveson Figueiredo",
-"Derrick Lewis",
-"Diego Lopes",
-"Dominick Cruz",
-"Dustin Poirier",
-"Drew Dober",
-"Edson Barboza",
-"Francis Ngannou",
-"Georges St-Pierre",
-"Gilbert Burns",
-"Henry Cejudo",
-"Islam Makhachev",
-"Ilia Topuria",
-"Jack Della Maddalena",
-"Jamahal Hill",
-"Jared Cannonier",
-"Jiri Prochazka",
-"Joanna Jedrzejczyk",
-"Joe Pyfer",
-"Jon Jones",
-"Jose Aldo",
-"Joshua Van",
-"Justin Gaethje",
-"Kamaru Usman",
-"Karine Silva",
-"Kayla Harrison",
-"Kevin Holland",
-"Khabib Nurmagomedov",
-"Kyoji Horiguchi",
-"Leon Edwards",
-"Manel Kape",
-"Max Holloway",
-"Merab Dvalishvili",
-"Michael Chandler",
-"Michael Bisping",
-"Michael Morales",
-"Michel Pereira",
-"Mirko Cro Cop",
-"Nate Diaz",
-"Nassourdine Imavov",
-"Nick Diaz",
-"Nick Newell",
-"Paulo Costa",
-"Paddy Pimblett",
-"Petr Yan",
-"Rafael Fiziev",
-"Randy Couture",
-"Robert Whittaker",
-"Robbie Lawler",
-"Rose Namajunas",
-"Sean O'Malley",
-"Sean Strickland",
-"Sergei Pavlovich",
-"Shavkat Rakhmonov",
-"Stephen Thompson",
-"Stipe Miocic",
-"Tai Tuivasa",
-"Tatiana Suarez",
-"Tom Aspinall",
-"Tony Ferguson",
-"Valentina Shevchenko",
-"Virna Jandiroba",
-"Zabit Magomedsharipov"
+
+const fighters = [
+  {
+    id:"aaron-pico", name:"Aaron Pico", nickname:"None verified",
+    initials:"AP", division:"Featherweight", record:"15-5-0",
+    promotion:"UFC", style:"Wrestling / Boxing",
+    hometown:"Whittier, California, USA",
+    bio:"American mixed martial artist and former elite amateur wrestler and boxer. Pico began his professional MMA career in 2017 and later joined the UFC. Known for explosive wrestling, powerful boxing and finishing ability.",
+    history:[], source:"https://www.ufc.com/athlete/aaron-pico"
+  },
+  {
+    id:"adrian-yanez", name:"Adrian Yanez", nickname:"None verified",
+    initials:"AY", division:"Bantamweight", record:"18-6-1",
+    promotion:"UFC", style:"Boxing",
+    hometown:"Galveston, Texas, USA",
+    bio:"American bantamweight known for his sharp boxing, combinations and counter-punching. He made his UFC debut in 2020 after competing on Dana White's Contender Series.",
+    history:[], source:"https://www.ufc.com/athlete/adrian-yanez"
+  },
+  {
+    id:"alex-pereira", name:"Alex Pereira", nickname:"Poatan",
+    initials:"AP", division:"Heavyweight", record:"13-4-0",
+    promotion:"UFC", style:"Kickboxing",
+    hometown:"São Bernardo do Campo, Brazil",
+    bio:"Brazilian mixed martial artist and former elite kickboxer. Pereira became a two-division UFC champion, winning titles at middleweight and light heavyweight before moving to heavyweight.",
+    history:[], source:"https://www.ufc.com/athlete/alex-pereira"
+  },
+  {
+    id:"alexander-gustafsson", name:"Alexander Gustafsson", nickname:"The Mauler",
+    initials:"AG", division:"Light Heavyweight", record:"18-8-0",
+    promotion:"Former UFC fighter", style:"Striking / Boxing",
+    hometown:"Arboga, Sweden",
+    bio:"Swedish mixed martial artist remembered for his three legendary light-heavyweight title challenges and his closely contested battles with Jon Jones. A member of the UFC Hall of Fame Fight Wing.",
+    history:[], source:"https://www.ufc.com/athlete/alexander-gustafsson"
+  },
+  {
+    id:"alexander-volkanovski", name:"Alexander Volkanovski", nickname:"The Great",
+    initials:"AV", division:"Featherweight", record:"29-4-0",
+    promotion:"UFC", style:"Boxing / Wrestling",
+    hometown:"Wollongong, Australia",
+    bio:"Australian mixed martial artist and former UFC featherweight champion. Known for his pressure, tactical intelligence, defensive wrestling and ability to adapt during fights.",
+    history:[], source:"https://www.ufc.com/athlete/alexander-volkanovski"
+  },
+  {
+    id:"aljamain-sterling", name:"Aljamain Sterling", nickname:"Funk Master",
+    initials:"AS", division:"Featherweight", record:"26-5-0",
+    promotion:"UFC", style:"Wrestling / Brazilian Jiu-Jitsu",
+    hometown:"Uniondale, New York, USA",
+    bio:"American mixed martial artist and former UFC bantamweight champion. Sterling is known for his grappling, back control, wrestling and submission game.",
+    history:[], source:"https://www.ufc.com/athlete/aljamain-sterling"
+  },
+  {
+    id:"alistair-overeem", name:"Alistair Overeem", nickname:"The Reem",
+    initials:"AO", division:"Heavyweight", record:"Retired",
+    promotion:"Former UFC fighter", style:"Kickboxing / Muay Thai",
+    hometown:"Hounslow, London, England",
+    bio:"Dutch kickboxer and mixed martial artist who competed at the highest level across several major promotions. Former Strikeforce heavyweight champion and K-1 World Grand Prix champion.",
+    history:[], source:"https://www.sherdog.com/fighter/Alistair-Overeem-461
+"
+  },
+  {
+    id:"amir-albazi", name:"Amir Albazi", nickname:"The Prince",
+    initials:"AA", division:"Flyweight", record:"17-3-0",
+    promotion:"UFC", style:"Wrestling / Brazilian Jiu-Jitsu",
+    hometown:"Baghdad, Iraq",
+    bio:"Iraqi-Swedish mixed martial artist competing in the UFC flyweight division. Known for his grappling, wrestling and submission skills.",
+    history:[], source:"https://www.ufc.com/athlete/amir-albazi"
+  },
+  {
+    id:"anderson-silva", name:"Anderson Silva", nickname:"The Spider",
+    initials:"AS", division:"Middleweight", record:"34-11-0 (1 NC)",
+    promotion:"Former UFC fighter", style:"Muay Thai / Boxing",
+    hometown:"São Paulo, Brazil",
+    bio:"Brazilian mixed martial artist widely regarded as one of the greatest strikers in MMA history. Silva held the UFC middleweight championship and set a record for consecutive title defences.",
+    history:[], source:"https://www.sherdog.com/fighter/Anderson-Silva-1356"
+  },
+  {
+    id:"anthony-johnson", name:"Anthony Johnson", nickname:"Rumble",
+    initials:"AJ", division:"Light Heavyweight", record:"23-6-0",
+    promotion:"Former UFC fighter", style:"Wrestling / Boxing",
+    hometown:"Dublin, Georgia, USA",
+    bio:"American mixed martial artist remembered for extraordinary knockout power. Johnson competed at welterweight, middleweight and light heavyweight and challenged for the UFC light-heavyweight title.",
+    history:[], source:"https://www.sherdog.com/fighter/Anthony-Johnson-17662"
+  },
+  {
+    id:"arman-tsarukyan", name:"Arman Tsarukyan", nickname:"Ahalkalakets",
+    initials:"AT", division:"Lightweight", record:"24-3-0",
+    promotion:"UFC", style:"Wrestling / MMA",
+    hometown:"Akhalkalaki, Georgia",
+    bio:"Armenian-Georgian mixed martial artist competing in the UFC lightweight division. Known for his wrestling, explosive takedowns and well-rounded striking.",
+    history:[], source:"https://www.ufc.com/athlete/arman-tsarukyan"
+  },
+  {
+    id:"arnold-allen", name:"Arnold Allen", nickname:"Almighty",
+    initials:"AA", division:"Featherweight", record:"21-4-0",
+    promotion:"UFC", style:"Boxing / MMA",
+    hometown:"Ipswich, England",
+    bio:"English mixed martial artist competing in the UFC featherweight division. Allen is known for his technical boxing, combinations and disciplined approach.",
+    history:[], source:"https://www.ufc.com/athlete/arnold-allen"
+  },
+  {
+    id:"asu-almabayev", name:"Asu Almabayev", nickname:"Zulfikar",
+    initials:"AA", division:"Flyweight", record:"24-3-0",
+    promotion:"UFC", style:"Wrestling / Grappling",
+    hometown:"Kazakhstan",
+    bio:"Kazakhstani mixed martial artist competing in the UFC flyweight division. Known for his grappling-heavy approach and submission ability.",
+    history:[], source:"https://www.ufc.com/athlete/asu-almabayev"
+  },
+  {
+    id:"belal-muhammad", name:"Belal Muhammad", nickname:"Remember the Name",
+    initials:"BM", division:"Welterweight", record:"24-6-0 (1 NC)",
+    promotion:"UFC", style:"Wrestling / Boxing",
+    hometown:"Chicago, Illinois, USA",
+    bio:"American mixed martial artist of Palestinian descent. Former UFC welterweight champion, recognised for his relentless pace, wrestling and pressure-based style.",
+    history:[], source:"https://www.ufc.com/athlete/belal-muhammad"
+  },
+  {
+    id:"beneil-dariush", name:"Beneil Dariush", nickname:"None verified",
+    initials:"BD", division:"Lightweight", record:"23-8-1",
+    promotion:"UFC", style:"Brazilian Jiu-Jitsu / Wrestling",
+    hometown:"Goiania, Brazil",
+    bio:"Iranian-American mixed martial artist competing in the UFC lightweight division. A highly experienced grappler and Brazilian Jiu-Jitsu black belt.",
+    history:[], source:"https://www.ufc.com/athlete/beneil-dariush"
+  },
+  {
+    id:"benoit-saint-denis", name:"Benoît Saint Denis", nickname:"God of War",
+    initials:"BS", division:"Lightweight", record:"17-4-0 (1 NC)",
+    promotion:"UFC", style:"Muay Thai / Brazilian Jiu-Jitsu",
+    hometown:"Nîmes, France",
+    bio:"French mixed martial artist and former French Army special forces soldier. Competes in the UFC lightweight division and is known for aggressive pressure and finishing ability.",
+    history:[], source:"https://www.ufc.com/athlete/benoit-saint-denis"
+  },
+  {
+    id:"bo-nickal", name:"Bo Nickal", nickname:"None verified",
+    initials:"BN", division:"Middleweight", record:"9-1-0",
+    promotion:"UFC", style:"Freestyle Wrestling",
+    hometown:"Reno, Nevada, USA",
+    bio:"American mixed martial artist and decorated collegiate wrestler. A three-time NCAA Division I national champion before transitioning to professional MMA.",
+    history:[], source:"https://www.ufc.com/athlete/bo-nickal"
+  },
+  {
+    id:"brandon-moreno", name:"Brandon Moreno", nickname:"The Assassin Baby",
+    initials:"BM", division:"Flyweight", record:"24-10-2",
+    promotion:"UFC", style:"Boxing / Brazilian Jiu-Jitsu",
+    hometown:"Tijuana, Mexico",
+    bio:"Mexican mixed martial artist and former UFC flyweight champion. Known for his pace, durability, boxing and dangerous submission game.",
+    history:[], source:"https://www.ufc.com/athlete/brandon-moreno"
+  },
+  {
+    id:"brandon-royval", name:"Brandon Royval", nickname:"Raw Dawg",
+    initials:"BR", division:"Flyweight", record:"18-9-0",
+    promotion:"UFC", style:"Brazilian Jiu-Jitsu / Muay Thai",
+    hometown:"Denver, Colorado, USA",
+    bio:"American mixed martial artist competing in the UFC flyweight division. Known for unpredictable scrambles, aggressive submissions and high-paced fights.",
+    history:[], source:"https://www.ufc.com/athlete/brandon-royval"
+  },
+  {
+    id:"brian-ortega", name:"Brian Ortega", nickname:"T-City",
+    initials:"BO", division:"Featherweight", record:"16-5-0 (1 NC)",
+    promotion:"UFC", style:"Brazilian Jiu-Jitsu",
+    hometown:"Los Angeles, California, USA",
+    bio:"American mixed martial artist and Brazilian Jiu-Jitsu black belt. A former UFC featherweight title challenger, known for dangerous submissions and his guillotine choke.",
+    history:[], source:"https://www.ufc.com/athlete/brian-ortega"
+  },
+
+  {
+    id:"kye-trimble", name:"Kye Trimble", nickname:"Turbo",
+    initials:"KT", division:"Flyweight",
+    record:"Not independently verified",
+    promotion:"Community profile",
+    style:"Muay Thai / MMA",
+    hometown:"Birmingham, England",
+    bio:"A community-submitted fighter profile. The information on this page has been supplied by the profile owner and has not been independently verified.",
+    history:[],
+    community:true
+  }
 ];
 
-// Correct the display order alphabetically.
-fighterNames.sort((a,b) => a.localeCompare(b));
-
-const fighters = fighterNames.map((name, index) => ({
-  id: "fighter-" + index,
-  name,
-  nickname: "Not yet verified",
-  division: "Not yet verified",
-  record: "Not yet verified",
-  promotion: "MMA",
-  style: "Not yet verified",
-  hometown: "Not yet verified",
-  bio: "Fighter profile awaiting independently verified information.",
-  community: false
-}));
-
-// Community-submitted profile.
-fighters.push({
-  id: "kye-trimble",
-  name: "Kye Trimble",
-  nickname: "Turbo",
-  division: "Flyweight",
-  record: "Not independently verified",
-  promotion: "Community profile",
-  style: "Muay Thai / MMA",
-  hometown: "Birmingham, England",
-  bio: "A community-submitted fighter profile. Information supplied by the profile owner and not independently verified.",
-  community: true
-});
-
 fighters.sort((a,b) => a.name.localeCompare(b.name));
-
-const grid = document.getElementById("fighters");
-const search = document.getElementById("search");
-const directory = document.getElementById("directory");
-const profile = document.getElementById("profile");
-const count = document.getElementById("count");
-const alphabet = document.getElementById("alphabet");
-
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;"
-  })[char]);
-}
-
-function initials(name) {
-  return name.split(" ").map(part => part[0]).slice(0,2).join("").toUpperCase();
-}
-
-function renderAlphabet() {
-  alphabet.innerHTML = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(letter =>
-    `<button type="button" data-letter="${letter}">${letter}</button>`
-  ).join("");
-
-  alphabet.querySelectorAll("button").forEach(button => {
-    button.addEventListener("click", () => {
-      search.value = "";
-      renderFighters();
-      const letter = button.dataset.letter;
-      const first = [...grid.querySelectorAll(".card")]
-        .find(card => card.dataset.name.startsWith(letter));
-      if (first) first.scrollIntoView({behavior:"smooth", block:"center"});
-    });
-  });
-}
-
-function renderFighters() {
-  const query = search.value.toLowerCase().trim();
-
-  const filtered = fighters.filter(fighter =>
-    fighter.name.toLowerCase().includes(query) ||
-    fighter.nickname.toLowerCase().includes(query)
-  );
-
-  count.textContent = `${filtered.length} FIGHTERS`;
-
-  if (!filtered.length) {
-    grid.innerHTML = `<div class="empty">No fighters found.</div>`;
-    return;
-  }
-
-  grid.innerHTML = filtered.map(fighter => `
-    <article class="card" data-name="${escapeHTML(fighter.name)}"
-      data-id="${escapeHTML(fighter.id)}">
-      <div class="initials">${escapeHTML(initials(fighter.name))}</div>
-      <h3>${escapeHTML(fighter.name)}</h3>
-      <p>${escapeHTML(fighter.promotion)}</p>
-      <span class="arrow">→</span>
-    </article>
-  `).join("");
-
-  grid.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("click", () => openFighter(card.dataset.id));
-  });
-}
-
-function openFighter(id) {
-  const fighter = fighters.find(item => item.id === id);
-  if (!fighter) return;
-
-  directory.style.display = "none";
-  profile.style.display = "block";
-
-  profile.innerHTML = `
-    <button class="back" id="backButton">← BACK TO DIRECTORY</button>
-
-    <div class="initials">${escapeHTML(initials(fighter.name))}</div>
-    <h1>${escapeHTML(fighter.name)}</h1>
-    <div class="nickname">${escapeHTML(fighter.nickname)}</div>
-
-    <div class="details">
-      <div class="detail">
-        <small>RECORD</small>
-        <strong>${escapeHTML(fighter.record)}</strong>
-      </div>
-      <div class="detail">
-        <small>DIVISION</small>
-        <strong>${escapeHTML(fighter.division)}</strong>
-      </div>
-      <div class="detail">
-        <small>PROMOTION</small>
-        <strong>${escapeHTML(fighter.promotion)}</strong>
-      </div>
-      <div class="detail">
-        <small>FIGHTING STYLE</small>
-        <strong>${escapeHTML(fighter.style)}</strong>
-      </div>
-      <div class="detail">
-        <small>HOMETOWN</small>
-        <strong>${escapeHTML(fighter.hometown)}</strong>
-      </div>
-    </div>
-
-    <h2>BIOGRAPHY</h2>
-    <p>${escapeHTML(fighter.bio)}</p>
-
-    <h2>FIGHT HISTORY</h2>
-    <p class="notice">Fight history has not yet been independently verified.</p>
-
-    <h2>PROFILE INFORMATION</h2>
-    <p class="notice">
-      ${fighter.community
-        ? "Community-submitted profile. Information has not been independently verified."
-        : "This profile is awaiting verified records, statistics and biography information."}
-    </p>
-  `;
-
-  document.getElementById("backButton").addEventListener("click", goHome);
-
-  history.pushState({fighter:id}, "", "#fighters/" + id);
-  window.scrollTo(0,0);
-}
-
-function goHome() {
-  profile.style.display = "none";
-  directory.style.display = "block";
-  history.pushState({}, "", location.pathname);
-  window.scrollTo(0,0);
-}
-
-search.addEventListener("input", renderFighters);
-
-window.addEventListener("popstate", () => {
-  const id = location.hash.match(/^#fighters\/(.+)$/);
-  if (id) {
-    openFighter(id[1]);
-  } else {
-    profile.style.display = "none";
-    directory.style.display = "block";
-  }
-});
-
-renderAlphabet();
-renderFighters();
-
-const initialRoute = location.hash.match(/^#fighters\/(.+)$/);
-if (initialRoute) openFighter(initialRoute[1]);
 
 </script>
 </body>
