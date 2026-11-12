@@ -4,256 +4,531 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101010">
+
 <meta name="google-site-verification" content="H0ZS6fMXmqeoVIKF8ISfKIhSn3132TvZBllC0p6esVo">
 
-<title>Kye "Turbo" Trimble | MMA Media</title>
-<meta name="description" content="Fighter profile for Kye 'Turbo' Trimble, an England-based flyweight MMA fighter profile.">
+<title>MMA MEDIA | The Fighter Database</title>
+<meta name="description" content="Explore MMA fighters, profiles, biographies and fight records on MMA MEDIA.">
 
 <style>
 :root {
-  --gold: #d5ad55;
-  --background: #101010;
-  --panel: #191919;
-  --text: #f4f4f4;
-  --muted: #a5a5a5;
+  --gold: #d6ad55;
+  --bg: #090909;
+  --panel: #141414;
+  --muted: #999;
+  --border: #292929;
 }
+
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
-  background: var(--background);
-  color: var(--text);
+  background: var(--bg);
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
 }
+
 header {
-  padding: 22px 7%;
+  height: 76px;
+  padding: 0 7%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #292929;
+  border-bottom: 1px solid var(--border);
 }
+
 .logo {
-  color: var(--gold);
+  font-size: 23px;
   font-weight: 900;
-  letter-spacing: 3px;
-  font-size: 19px;
+  letter-spacing: 2px;
 }
+
+.logo span { color: var(--gold); }
+
 nav a {
-  color: #ddd;
+  color: #aaa;
   text-decoration: none;
-  margin-left: 22px;
   font-size: 13px;
+  margin-left: 22px;
 }
+
+nav a:hover { color: var(--gold); }
+
 .hero {
-  min-height: 390px;
-  padding: 75px 8%;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(90deg, #101010 5%, rgba(16,16,16,.88) 60%, rgba(16,16,16,.65)),
-    radial-gradient(circle at 80% 40%, #594522, #151515 65%);
+  text-align: center;
+  padding: 75px 20px 55px;
+  background: radial-gradient(ellipse at top, #292116 0%, #090909 65%);
 }
+
 .eyebrow {
   color: var(--gold);
+  font-size: 11px;
   letter-spacing: 4px;
-  font-size: 12px;
   font-weight: bold;
 }
-h1 {
-  font-size: clamp(42px, 8vw, 76px);
-  line-height: 1;
+
+.hero h1 {
+  font-size: clamp(38px, 8vw, 65px);
   margin: 15px 0;
-  text-transform: uppercase;
-}
-h1 span { color: var(--gold); }
-.hero p { color: #ccc; max-width: 500px; }
-.record {
-  display: flex;
-  gap: 30px;
-  margin-top: 28px;
-}
-.record strong {
-  display: block;
-  font-size: 31px;
-  color: var(--gold);
-}
-.record small {
-  color: var(--muted);
   letter-spacing: 2px;
-  font-size: 10px;
 }
+
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  color: #aaa;
+  font-size: 15px;
+}
+
+.search-wrap {
+  max-width: 620px;
+  margin: 35px auto 0;
+  position: relative;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 19px 22px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: #151515;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-wrap input:focus {
+  border-color: var(--gold);
+}
+
 main {
-  max-width: 1100px;
+  max-width: 1150px;
   margin: auto;
-  padding: 45px 22px;
+  padding: 35px 22px 80px;
 }
-section { margin-bottom: 55px; }
-.section-title {
-  font-size: 23px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-left: 3px solid var(--gold);
-  padding-left: 13px;
-  margin-bottom: 23px;
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 }
-.stats {
+
+.section-heading h2 {
+  font-size: 19px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.section-heading span {
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.fighter-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 17px;
 }
+
+.fighter-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.fighter-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+
+.card-image {
+  height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #28231a, #111);
+  color: var(--gold);
+  font-size: 42px;
+  font-weight: 900;
+}
+
+.card-info { padding: 19px; }
+
+.card-info h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+}
+
+.card-info p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+.view-profile {
+  display: inline-block;
+  margin-top: 17px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#profile-view { display: none; }
+
+.back-button {
+  background: none;
+  border: 1px solid #444;
+  color: white;
+  padding: 11px 17px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.back-button:hover { border-color: var(--gold); }
+
+.profile-top {
+  background: linear-gradient(120deg, #211b11, #111);
+  border: 1px solid var(--border);
+  padding: 40px 30px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.profile-top .eyebrow { margin-bottom: 15px; }
+
+.profile-top h1 {
+  font-size: clamp(30px, 6vw, 48px);
+  margin: 0 0 12px;
+}
+
+.profile-top p { color: #aaa; }
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 25px 0;
+}
+
 .stat {
   background: var(--panel);
+  border: 1px solid var(--border);
   padding: 20px;
-  border: 1px solid #292929;
 }
+
 .stat small {
-  color: var(--muted);
   display: block;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 10px;
-}
-.stat strong { font-size: 20px; }
-.bio {
-  background: var(--panel);
-  border: 1px solid #292929;
-  padding: 25px;
-  color: #ccc;
-}
-.fight {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 15px;
-  background: var(--panel);
-  border: 1px solid #292929;
-  padding: 19px;
-  margin-bottom: 10px;
-  align-items: center;
-}
-.fight h3 { margin: 0; }
-.fight p {
-  margin: 4px 0 0;
   color: var(--muted);
-  font-size: 13px;
-}
-.result {
-  color: var(--gold);
-  font-weight: bold;
-  text-align: right;
-}
-footer {
-  border-top: 1px solid #292929;
-  text-align: center;
-  padding: 28px 20px;
-  color: var(--muted);
-  font-size: 12px;
-}
-.disclosure {
-  max-width: 700px;
-  margin: 12px auto 0;
-  color: #888;
+  margin-bottom: 9px;
   font-size: 11px;
+  text-transform: uppercase;
 }
-@media (max-width: 600px) {
-  header { padding: 18px 5%; }
+
+.stat strong {
+  font-size: 18px;
+  color: var(--gold);
+}
+
+.profile-section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 25px;
+  margin-top: 17px;
+}
+
+.profile-section h2 {
+  color: var(--gold);
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.profile-section p {
+  color: #bbb;
+  line-height: 1.7;
+}
+
+.notice {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.empty {
+  color: #999;
+  text-align: center;
+  padding: 50px 10px;
+  grid-column: 1 / -1;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding: 30px 20px;
+  color: #777;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+footer strong { color: var(--gold); }
+
+@media(max-width: 600px) {
+  header { padding: 0 18px; }
   nav a { margin-left: 10px; font-size: 11px; }
-  .hero { padding: 65px 7%; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .fight { grid-template-columns: 1fr; }
-  .result { text-align: left; }
+  .hero { padding: 60px 18px 45px; }
+  main { padding: 30px 16px 60px; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">MMA MEDIA</div>
+  <div class="logo">MMA <span>MEDIA</span></div>
   <nav>
-    <a href="#profile">PROFILE</a>
-    <a href="#record">RECORD</a>
-    <a href="#bio">BIO</a>
+    <a href="#home">HOME</a>
+    <a href="#fighters">FIGHTERS</a>
   </nav>
 </header>
 
-<div class="hero">
-  <div>
-    <div class="eyebrow">ENGLAND · FLYWEIGHT</div>
-    <h1>KYE <span>"TURBO"</span><br>TRIMBLE</h1>
-    <p>Mixed martial arts fighter profile · 125 lbs</p>
-    <div class="record">
-      <div><strong>3–0</strong><small>PROFILE RECORD</small></div>
-      <div><strong>2</strong><small>TKO WINS</small></div>
-      <div><strong>125</strong><small>POUNDS</small></div>
+<div id="home-view">
+  <section class="hero">
+    <div class="eyebrow">THE WORLD OF MIXED MARTIAL ARTS</div>
+    <h1>THE FIGHTER <span>DATABASE</span></h1>
+    <p>Explore fighters. Discover their stories. Follow their careers.</p>
+
+    <div class="search-wrap">
+      <input
+        id="fighter-search"
+        type="search"
+        placeholder="Search fighters by name or nickname..."
+        autocomplete="off"
+      >
     </div>
-  </div>
+  </section>
+
+  <main id="fighters">
+    <div class="section-heading">
+      <h2 id="list-heading">FIGHTER DATABASE</h2>
+      <span id="fighter-count"></span>
+    </div>
+
+    <div class="fighter-grid" id="fighter-grid"></div>
+  </main>
 </div>
 
-<main>
-  <section id="profile">
-    <h2 class="section-title">Fighter details</h2>
-    <div class="stats">
-      <div class="stat"><small>Division</small><strong>Flyweight</strong></div>
-      <div class="stat"><small>Weight</small><strong>125 lbs</strong></div>
-      <div class="stat"><small>Height</small><strong>5'5"</strong></div>
-      <div class="stat"><small>Reach</small><strong>66 inches</strong></div>
-      <div class="stat"><small>Stance</small><strong>Switch</strong></div>
-      <div class="stat"><small>Country</small><strong>England</strong></div>
-      <div class="stat"><small>Training background</small><strong>7 years</strong></div>
-      <div class="stat"><small>Gym</small><strong>Team Renegade</strong></div>
-      <div class="stat"><small>Style</small><strong>Muay Thai / MMA</strong></div>
-    </div>
-  </section>
-
-  <section id="bio">
-    <h2 class="section-title">Biography</h2>
-    <div class="bio">
-      Kye "Turbo" Trimble is an England-based flyweight fighter profile.
-      He has trained alongside his uncle at Team Renegade in Solihull,
-      Birmingham, for seven years.
-
-      <p>His approach combines Muay Thai with mixed martial arts, with
-      a greater focus on MMA.</p>
-
-      <p>Outside the gym, he puts the gloves down to focus on his
-      college studies in Tamworth. His ambition is simple: to be the best.</p>
-    </div>
-  </section>
-
-  <section id="record">
-    <h2 class="section-title">Fight history</h2>
-
-    <div class="fight">
-      <div>
-        <h3>Jayden Carter</h3>
-        <p>Opponent's previous record: 4–0</p>
-      </div>
-      <div class="result">TKO · ROUND 3</div>
-    </div>
-
-    <div class="fight">
-      <div>
-        <h3>Michael Lemendowski</h3>
-        <p>Opponent's previous record: 2–1</p>
-      </div>
-      <div class="result">TKO · ROUND 1</div>
-    </div>
-
-    <div class="fight">
-      <div>
-        <h3>Brandon Tafa</h3>
-        <p>Opponent's previous record: 5–2</p>
-      </div>
-      <div class="result">DECISION · 30–27</div>
-    </div>
-  </section>
-</main>
+<div id="profile-view">
+  <main>
+    <button class="back-button" onclick="goHome()">← BACK TO FIGHTERS</button>
+    <div id="profile-content"></div>
+  </main>
+</div>
 
 <footer>
-  MMA MEDIA
-  <div class="disclosure">
-  </div>
+  <strong>MMA MEDIA</strong><br>
+  THE FIGHTER DATABASE<br><br>
+  Fighter information should be checked against reliable sources.
+  User-submitted and unverified information is identified accordingly.<br><br>
+  © 2026 MMA MEDIA
 </footer>
+
+<script>
+// ADD NEW FIGHTERS TO THIS DATABASE.
+// Only publish records and statistics once verified.
+
+const fighters = [
+  {
+    id: "ilia-topuria",
+    name: "Ilia Topuria",
+    nickname: "El Matador",
+    initials: "IT",
+    division: "Lightweight",
+    record: "Verify before publishing",
+    promotion: "UFC",
+    style: "Boxing / MMA",
+    hometown: "Halle, Germany",
+    bio: "A mixed martial arts fighter known for his technical boxing and finishing ability.",
+    history: []
+  },
+  {
+    id: "joshua-van",
+    name: "Joshua Van",
+    nickname: "The Fearless",
+    initials: "JV",
+    division: "Flyweight",
+    record: "Verify before publishing",
+    promotion: "UFC",
+    style: "MMA",
+    hometown: "Myanmar",
+    bio: "A mixed martial arts fighter competing in the flyweight division.",
+    history: []
+  },
+  {
+    id: "kamaru-usman",
+    name: "Kamaru Usman",
+    nickname: "The Nigerian Nightmare",
+    initials: "KU",
+    division: "Welterweight",
+    record: "Verify before publishing",
+    promotion: "UFC",
+    style: "Wrestling / MMA",
+    hometown: "Auchi, Nigeria",
+    bio: "A mixed martial arts fighter known for his wrestling and pressure.",
+    history: []
+  },
+  {
+    id: "kye-trimble",
+    name: "Kye Trimble",
+    nickname: "Turbo",
+    initials: "KT",
+    division: "Flyweight",
+    record: "Not independently verified",
+    promotion: "Community profile",
+    style: "Muay Thai / MMA",
+    hometown: "Birmingham, England",
+    bio: "A community-submitted fighter profile. The information on this page has been supplied by the profile owner and has not been independently verified.",
+    history: []
+  }
+];
+
+const grid = document.getElementById("fighter-grid");
+const search = document.getElementById("fighter-search");
+
+function renderFighters(list) {
+  grid.innerHTML = "";
+
+  document.getElementById("fighter-count").textContent =
+    list.length + (list.length === 1 ? " FIGHTER" : " FIGHTERS");
+
+  if (list.length === 0) {
+    grid.innerHTML = '<div class="empty">No fighters found. Try another name.</div>';
+    return;
+  }
+
+  list.forEach(fighter => {
+    const card = document.createElement("div");
+    card.className = "fighter-card";
+    card.onclick = () => openFighter(fighter.id);
+
+    card.innerHTML = `
+      <div class="card-image">${fighter.initials}</div>
+      <div class="card-info">
+        <h3>${fighter.name}</h3>
+        <p>${fighter.nickname} · ${fighter.promotion}</p>
+        <span class="view-profile">VIEW PROFILE →</span>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+function openFighter(id) {
+  const fighter = fighters.find(item => item.id === id);
+  if (!fighter) return;
+
+  document.getElementById("home-view").style.display = "none";
+  document.getElementById("profile-view").style.display = "block";
+
+  const history = fighter.history.length
+    ? fighter.history.map(fight => `
+        <p>${fight.opponent} — ${fight.result} (${fight.method})</p>
+      `).join("")
+    : '<p>Fight history has not yet been added.</p>';
+
+  document.getElementById("profile-content").innerHTML = `
+    <div class="profile-top">
+      <div class="eyebrow">MMA MEDIA FIGHTER PROFILE</div>
+      <h1>${fighter.name}</h1>
+      <p>${fighter.nickname} · ${fighter.promotion}</p>
+    </div>
+
+    <div class="profile-grid">
+      <div class="stat">
+        <small>Record</small>
+        <strong>${fighter.record}</strong>
+      </div>
+      <div class="stat">
+        <small>Division</small>
+        <strong>${fighter.division}</strong>
+      </div>
+      <div class="stat">
+        <small>Fighting style</small>
+        <strong>${fighter.style}</strong>
+      </div>
+      <div class="stat">
+        <small>Hometown</small>
+        <strong>${fighter.hometown}</strong>
+      </div>
+    </div>
+
+    <div class="profile-section">
+      <h2>BIOGRAPHY</h2>
+      <p>${fighter.bio}</p>
+    </div>
+
+    <div class="profile-section">
+      <h2>FIGHT HISTORY</h2>
+      ${history}
+    </div>
+
+    <p class="notice">
+      Profile information may be incomplete. Records and statistics
+      should be verified against reliable sources.
+    </p>
+  `;
+
+  location.hash = "fighters/" + fighter.id;
+  window.scrollTo(0, 0);
+}
+
+function goHome() {
+  location.hash = "home";
+  showHome();
+}
+
+function showHome() {
+  document.getElementById("home-view").style.display = "block";
+  document.getElementById("profile-view").style.display = "none";
+  window.scrollTo(0, 0);
+}
+
+function handleRoute() {
+  const id = location.hash.match(/^#fighters\/(.+)$/);
+
+  if (id) {
+    openFighter(id[1]);
+  } else {
+    showHome();
+  }
+}
+
+search.addEventListener("input", function() {
+  const term = this.value.toLowerCase().trim();
+
+  const filtered = fighters.filter(fighter =>
+    fighter.name.toLowerCase().includes(term) ||
+    fighter.nickname.toLowerCase().includes(term) ||
+    fighter.promotion.toLowerCase().includes(term)
+  );
+
+  document.getElementById("list-heading").textContent =
+    term ? "SEARCH RESULTS" : "FIGHTER DATABASE";
+
+  renderFighters(filtered);
+});
+
+window.addEventListener("hashchange", handleRoute);
+
+renderFighters(fighters);
+handleRoute();
+</script>
 
 </body>
 </html>
