@@ -4,16 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="H0ZS6fMXmqeoVIKF8ISfKIhSn3132TvZBllC0p6esVo">
-<title>MMA MEDIA | The Fighter Database</title>
+<meta name="theme-color" content="#090909">
+<title>MMA MEDIA | Fighter Database</title>
 
 <style>
 :root {
-  --gold: #d6ad55;
   --bg: #090909;
-  --panel: #141414;
-  --muted: #999;
-  --border: #292929;
+  --panel: #151515;
+  --gold: #d6ad55;
+  --gold-light: #f0d28b;
+  --text: #f4f1e9;
+  --muted: #aaa49a;
+  --border: #302a1d;
 }
 
 * { box-sizing: border-box; }
@@ -21,231 +23,272 @@
 body {
   margin: 0;
   background: var(--bg);
-  color: #f5f5f5;
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-  padding: 25px 6%;
   border-bottom: 1px solid var(--border);
+  background: #0d0d0d;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.wrap {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+.top {
+  min-height: 76px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-  font-size: 25px;
   font-weight: 900;
   letter-spacing: 2px;
+  font-size: 23px;
 }
 
-.logo span { color: var(--gold); }
+.logo span, .gold { color: var(--gold); }
 
-header small {
+.tag {
+  font-size: 11px;
   color: var(--muted);
   letter-spacing: 2px;
 }
 
-.hero {
-  text-align: center;
-  padding: 65px 20px 35px;
+main { padding: 34px 0 70px; }
+
+h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  margin: 0 0 8px;
 }
 
-.hero h1 {
-  font-size: clamp(35px, 6vw, 60px);
-  margin: 0 0 12px;
-  letter-spacing: 3px;
-}
-
-.hero h1 span { color: var(--gold); }
-
-.hero p { color: var(--muted); }
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-.search {
-  width: 100%;
-  padding: 17px;
-  background: #171717;
-  color: white;
-  border: 1px solid #333;
-  border-radius: 7px;
-  font-size: 16px;
-  outline: none;
+.sub {
+  color: var(--muted);
   margin-bottom: 25px;
+  line-height: 1.5;
 }
 
-.search:focus { border-color: var(--gold); }
-
-.toolbar {
+.controls {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 10px;
+  margin: 22px 0;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 22px;
 }
 
-.toolbar h2 {
-  font-size: 17px;
-  letter-spacing: 2px;
+input {
+  flex: 1;
+  min-width: 210px;
+  background: #151515;
+  border: 1px solid #3a3428;
+  border-radius: 8px;
+  color: white;
+  padding: 14px;
+  font-size: 15px;
+  outline: none;
 }
 
-.toolbar span { color: var(--gold); }
+input:focus { border-color: var(--gold); }
+
+button {
+  background: #191919;
+  color: var(--gold-light);
+  border: 1px solid #4a3d25;
+  border-radius: 7px;
+  padding: 10px 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--gold);
+  color: #111;
+}
 
 .alphabet {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-bottom: 25px;
+  margin: 15px 0 24px;
 }
 
 .alphabet button {
-  background: #171717;
-  border: 1px solid var(--border);
-  color: #ccc;
-  padding: 7px 10px;
-  cursor: pointer;
-  border-radius: 4px;
+  padding: 7px 9px;
+  min-width: 31px;
 }
 
-.alphabet button:hover {
-  background: var(--gold);
-  color: black;
+.count {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 14px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 13px;
 }
 
 .card {
-  background: var(--panel);
+  background: linear-gradient(145deg, #191919, #101010);
   border: 1px solid var(--border);
-  padding: 20px;
-  border-radius: 7px;
-  cursor: pointer;
-  transition: .2s;
+  border-radius: 10px;
+  padding: 17px;
+  text-align: left;
+  color: var(--text);
+  min-height: 145px;
+  transition: .15s;
+  width: 100%;
 }
 
 .card:hover {
   border-color: var(--gold);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-.initials {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  background: #292317;
+.cardtop {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.rank {
+  font-size: 12px;
   color: var(--gold);
-  font-weight: bold;
-  border-radius: 50%;
-  margin-bottom: 16px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.card h3 { margin: 0 0 8px; }
-
-.card p {
-  margin: 0;
+.record {
+  font-size: 12px;
   color: var(--muted);
-  font-size: 13px;
 }
 
-.card .arrow {
-  color: var(--gold);
-  float: right;
+.card h2 {
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+
+.nick {
+  font-size: 13px;
+  color: var(--gold-light);
+  margin-bottom: 9px;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--muted);
 }
 
 .profile {
   display: none;
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 30px;
-  margin-top: 20px;
+  border-radius: 12px;
+  padding: clamp(20px, 4vw, 38px);
 }
 
-.back {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-  padding: 10px 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-bottom: 25px;
-}
-
-.profile h1 {
-  font-size: 36px;
-  margin-bottom: 5px;
-}
-
-.profile .nickname {
-  color: var(--gold);
-  font-size: 18px;
-}
-
-.details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-  margin: 30px 0;
-}
-
-.detail {
-  background: #1c1c1c;
-  padding: 17px;
-  border-radius: 5px;
-}
-
-.detail small {
-  display: block;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-
-.detail strong { font-size: 16px; }
+.back { margin-bottom: 24px; }
 
 .profile h2 {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 12px;
+  font-size: clamp(28px, 5vw, 42px);
+  margin: 5px 0;
 }
 
-.notice {
+.nickname {
+  color: var(--gold);
+  font-size: 17px;
+  margin-bottom: 16px;
+}
+
+.profilegrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.stat {
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.stat small {
+  display: block;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.stat strong { font-size: 15px; }
+
+section h3 {
+  font-size: 16px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 28px 0 10px;
+}
+
+.bio {
+  color: #d3cec4;
+  line-height: 1.7;
+  max-width: 850px;
+}
+
+.fight {
+  padding: 13px;
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: #d3cec4;
+  line-height: 1.5;
+}
+
+.source {
+  display: inline-block;
+  color: var(--gold-light);
+  margin-top: 15px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+}
+
+.note {
+  color: var(--muted);
+  font-size: 12px;
   line-height: 1.6;
-}
-
-.empty {
-  color: var(--muted);
-  padding: 30px;
-  text-align: center;
-  grid-column: 1/-1;
+  margin-top: 30px;
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
 }
 
 footer {
-  text-align: center;
-  padding: 35px 15px;
-  margin-top: 60px;
   border-top: 1px solid var(--border);
+  padding: 22px 0;
   color: var(--muted);
   font-size: 12px;
 }
 
-footer span { color: var(--gold); }
+@media(max-width:520px) {
+  .top { min-height: 65px; }
+  .tag { display: none; }
+  .grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+  .card { padding: 13px; min-height: 135px; }
+  .card h2 { font-size: 15px; }
+}
 
-@media(max-width:600px) {
-  header { padding: 20px; }
-  header small { display: none; }
-  .profile { padding: 20px; }
+@media(max-width:360px) {
+  .grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -253,224 +296,517 @@ footer span { color: var(--gold); }
 <body>
 
 <header>
-  <div class="logo">MMA <span>MEDIA</span></div>
-  <small>THE FIGHTER DATABASE</small>
+  <div class="wrap top">
+    <div class="logo">MMA <span>MEDIA</span></div>
+    <div class="tag">FIGHTER DATABASE</div>
+  </div>
 </header>
 
-<section class="hero">
-  <h1>THE WORLD OF <span>MMA</span></h1>
-  <p>Explore the fighters. Discover their stories.</p>
-</section>
+<main class="wrap">
 
-<main class="container">
+<div id="directory">
 
-  <section id="directory">
+  <h1>Fighter <span class="gold">Directory</span></h1>
+
+  <p class="sub">
+    UFC men's pound-for-pound top 15, plus one community profile.
+  </p>
+
+  <div class="controls">
     <input
       id="search"
-      class="search"
       type="search"
-      placeholder="Search fighters..."
+      placeholder="Search fighters, nicknames or divisions..."
       autocomplete="off"
     >
+    <button id="clear">CLEAR</button>
+  </div>
 
-    <div class="toolbar">
-      <h2>FIGHTER DIRECTORY</h2>
-      <span id="count">100 FIGHTERS</span>
-    </div>
+  <div class="alphabet" id="alphabet"></div>
 
-    <div class="alphabet" id="alphabet"></div>
-    <div class="grid" id="fighters"></div>
-  </section>
+  <p class="count" id="count"></p>
 
-  <section class="profile" id="profile"></section>
+  <div class="grid" id="fighters"></div>
+
+</div>
+
+<div class="profile" id="profile">
+
+  <button class="back" id="back">← BACK TO DIRECTORY</button>
+
+  <div id="profileContent"></div>
+
+</div>
+
+<p class="note">
+  Independent MMA fan project. Rankings are a dated snapshot and may change.
+  Kye Trimble is a community profile, not an official UFC-ranked athlete.
+  Fighter records and results should be checked against current official records.
+</p>
 
 </main>
 
 <footer>
-  MMA <span>MEDIA</span> — THE FIGHTER DATABASE
-  <p>Records and fighter information should be independently verified.</p>
+  <div class="wrap">MMA MEDIA · Independent MMA database</div>
 </footer>
 
 <script>
 
 const fighters = [
-  {
-    id:"aaron-pico", name:"Aaron Pico", nickname:"None verified",
-    initials:"AP", division:"Featherweight", record:"15-5-0",
-    promotion:"UFC", style:"Wrestling / Boxing",
-    hometown:"Whittier, California, USA",
-    bio:"American mixed martial artist and former elite amateur wrestler and boxer. Pico began his professional MMA career in 2017 and later joined the UFC. Known for explosive wrestling, powerful boxing and finishing ability.",
-    history:[], source:"https://www.ufc.com/athlete/aaron-pico"
-  },
-  {
-    id:"adrian-yanez", name:"Adrian Yanez", nickname:"None verified",
-    initials:"AY", division:"Bantamweight", record:"18-6-1",
-    promotion:"UFC", style:"Boxing",
-    hometown:"Galveston, Texas, USA",
-    bio:"American bantamweight known for his sharp boxing, combinations and counter-punching. He made his UFC debut in 2020 after competing on Dana White's Contender Series.",
-    history:[], source:"https://www.ufc.com/athlete/adrian-yanez"
-  },
-  {
-    id:"alex-pereira", name:"Alex Pereira", nickname:"Poatan",
-    initials:"AP", division:"Heavyweight", record:"13-4-0",
-    promotion:"UFC", style:"Kickboxing",
-    hometown:"São Bernardo do Campo, Brazil",
-    bio:"Brazilian mixed martial artist and former elite kickboxer. Pereira became a two-division UFC champion, winning titles at middleweight and light heavyweight before moving to heavyweight.",
-    history:[], source:"https://www.ufc.com/athlete/alex-pereira"
-  },
-  {
-    id:"alexander-gustafsson", name:"Alexander Gustafsson", nickname:"The Mauler",
-    initials:"AG", division:"Light Heavyweight", record:"18-8-0",
-    promotion:"Former UFC fighter", style:"Striking / Boxing",
-    hometown:"Arboga, Sweden",
-    bio:"Swedish mixed martial artist remembered for his three legendary light-heavyweight title challenges and his closely contested battles with Jon Jones. A member of the UFC Hall of Fame Fight Wing.",
-    history:[], source:"https://www.ufc.com/athlete/alexander-gustafsson"
-  },
-  {
-    id:"alexander-volkanovski", name:"Alexander Volkanovski", nickname:"The Great",
-    initials:"AV", division:"Featherweight", record:"29-4-0",
-    promotion:"UFC", style:"Boxing / Wrestling",
-    hometown:"Wollongong, Australia",
-    bio:"Australian mixed martial artist and former UFC featherweight champion. Known for his pressure, tactical intelligence, defensive wrestling and ability to adapt during fights.",
-    history:[], source:"https://www.ufc.com/athlete/alexander-volkanovski"
-  },
-  {
-    id:"aljamain-sterling", name:"Aljamain Sterling", nickname:"Funk Master",
-    initials:"AS", division:"Featherweight", record:"26-5-0",
-    promotion:"UFC", style:"Wrestling / Brazilian Jiu-Jitsu",
-    hometown:"Uniondale, New York, USA",
-    bio:"American mixed martial artist and former UFC bantamweight champion. Sterling is known for his grappling, back control, wrestling and submission game.",
-    history:[], source:"https://www.ufc.com/athlete/aljamain-sterling"
-  },
-  {
-    id:"alistair-overeem", name:"Alistair Overeem", nickname:"The Reem",
-    initials:"AO", division:"Heavyweight", record:"Retired",
-    promotion:"Former UFC fighter", style:"Kickboxing / Muay Thai",
-    hometown:"Hounslow, London, England",
-    bio:"Dutch kickboxer and mixed martial artist who competed at the highest level across several major promotions. Former Strikeforce heavyweight champion and K-1 World Grand Prix champion.",
-    history:[], source:"https://www.sherdog.com/fighter/Alistair-Overeem-461
-"
-  },
-  {
-    id:"amir-albazi", name:"Amir Albazi", nickname:"The Prince",
-    initials:"AA", division:"Flyweight", record:"17-3-0",
-    promotion:"UFC", style:"Wrestling / Brazilian Jiu-Jitsu",
-    hometown:"Baghdad, Iraq",
-    bio:"Iraqi-Swedish mixed martial artist competing in the UFC flyweight division. Known for his grappling, wrestling and submission skills.",
-    history:[], source:"https://www.ufc.com/athlete/amir-albazi"
-  },
-  {
-    id:"anderson-silva", name:"Anderson Silva", nickname:"The Spider",
-    initials:"AS", division:"Middleweight", record:"34-11-0 (1 NC)",
-    promotion:"Former UFC fighter", style:"Muay Thai / Boxing",
-    hometown:"São Paulo, Brazil",
-    bio:"Brazilian mixed martial artist widely regarded as one of the greatest strikers in MMA history. Silva held the UFC middleweight championship and set a record for consecutive title defences.",
-    history:[], source:"https://www.sherdog.com/fighter/Anderson-Silva-1356"
-  },
-  {
-    id:"anthony-johnson", name:"Anthony Johnson", nickname:"Rumble",
-    initials:"AJ", division:"Light Heavyweight", record:"23-6-0",
-    promotion:"Former UFC fighter", style:"Wrestling / Boxing",
-    hometown:"Dublin, Georgia, USA",
-    bio:"American mixed martial artist remembered for extraordinary knockout power. Johnson competed at welterweight, middleweight and light heavyweight and challenged for the UFC light-heavyweight title.",
-    history:[], source:"https://www.sherdog.com/fighter/Anthony-Johnson-17662"
-  },
-  {
-    id:"arman-tsarukyan", name:"Arman Tsarukyan", nickname:"Ahalkalakets",
-    initials:"AT", division:"Lightweight", record:"24-3-0",
-    promotion:"UFC", style:"Wrestling / MMA",
-    hometown:"Akhalkalaki, Georgia",
-    bio:"Armenian-Georgian mixed martial artist competing in the UFC lightweight division. Known for his wrestling, explosive takedowns and well-rounded striking.",
-    history:[], source:"https://www.ufc.com/athlete/arman-tsarukyan"
-  },
-  {
-    id:"arnold-allen", name:"Arnold Allen", nickname:"Almighty",
-    initials:"AA", division:"Featherweight", record:"21-4-0",
-    promotion:"UFC", style:"Boxing / MMA",
-    hometown:"Ipswich, England",
-    bio:"English mixed martial artist competing in the UFC featherweight division. Allen is known for his technical boxing, combinations and disciplined approach.",
-    history:[], source:"https://www.ufc.com/athlete/arnold-allen"
-  },
-  {
-    id:"asu-almabayev", name:"Asu Almabayev", nickname:"Zulfikar",
-    initials:"AA", division:"Flyweight", record:"24-3-0",
-    promotion:"UFC", style:"Wrestling / Grappling",
-    hometown:"Kazakhstan",
-    bio:"Kazakhstani mixed martial artist competing in the UFC flyweight division. Known for his grappling-heavy approach and submission ability.",
-    history:[], source:"https://www.ufc.com/athlete/asu-almabayev"
-  },
-  {
-    id:"belal-muhammad", name:"Belal Muhammad", nickname:"Remember the Name",
-    initials:"BM", division:"Welterweight", record:"24-6-0 (1 NC)",
-    promotion:"UFC", style:"Wrestling / Boxing",
-    hometown:"Chicago, Illinois, USA",
-    bio:"American mixed martial artist of Palestinian descent. Former UFC welterweight champion, recognised for his relentless pace, wrestling and pressure-based style.",
-    history:[], source:"https://www.ufc.com/athlete/belal-muhammad"
-  },
-  {
-    id:"beneil-dariush", name:"Beneil Dariush", nickname:"None verified",
-    initials:"BD", division:"Lightweight", record:"23-8-1",
-    promotion:"UFC", style:"Brazilian Jiu-Jitsu / Wrestling",
-    hometown:"Goiania, Brazil",
-    bio:"Iranian-American mixed martial artist competing in the UFC lightweight division. A highly experienced grappler and Brazilian Jiu-Jitsu black belt.",
-    history:[], source:"https://www.ufc.com/athlete/beneil-dariush"
-  },
-  {
-    id:"benoit-saint-denis", name:"Benoît Saint Denis", nickname:"God of War",
-    initials:"BS", division:"Lightweight", record:"17-4-0 (1 NC)",
-    promotion:"UFC", style:"Muay Thai / Brazilian Jiu-Jitsu",
-    hometown:"Nîmes, France",
-    bio:"French mixed martial artist and former French Army special forces soldier. Competes in the UFC lightweight division and is known for aggressive pressure and finishing ability.",
-    history:[], source:"https://www.ufc.com/athlete/benoit-saint-denis"
-  },
-  {
-    id:"bo-nickal", name:"Bo Nickal", nickname:"None verified",
-    initials:"BN", division:"Middleweight", record:"9-1-0",
-    promotion:"UFC", style:"Freestyle Wrestling",
-    hometown:"Reno, Nevada, USA",
-    bio:"American mixed martial artist and decorated collegiate wrestler. A three-time NCAA Division I national champion before transitioning to professional MMA.",
-    history:[], source:"https://www.ufc.com/athlete/bo-nickal"
-  },
-  {
-    id:"brandon-moreno", name:"Brandon Moreno", nickname:"The Assassin Baby",
-    initials:"BM", division:"Flyweight", record:"24-10-2",
-    promotion:"UFC", style:"Boxing / Brazilian Jiu-Jitsu",
-    hometown:"Tijuana, Mexico",
-    bio:"Mexican mixed martial artist and former UFC flyweight champion. Known for his pace, durability, boxing and dangerous submission game.",
-    history:[], source:"https://www.ufc.com/athlete/brandon-moreno"
-  },
-  {
-    id:"brandon-royval", name:"Brandon Royval", nickname:"Raw Dawg",
-    initials:"BR", division:"Flyweight", record:"18-9-0",
-    promotion:"UFC", style:"Brazilian Jiu-Jitsu / Muay Thai",
-    hometown:"Denver, Colorado, USA",
-    bio:"American mixed martial artist competing in the UFC flyweight division. Known for unpredictable scrambles, aggressive submissions and high-paced fights.",
-    history:[], source:"https://www.ufc.com/athlete/brandon-royval"
-  },
-  {
-    id:"brian-ortega", name:"Brian Ortega", nickname:"T-City",
-    initials:"BO", division:"Featherweight", record:"16-5-0 (1 NC)",
-    promotion:"UFC", style:"Brazilian Jiu-Jitsu",
-    hometown:"Los Angeles, California, USA",
-    bio:"American mixed martial artist and Brazilian Jiu-Jitsu black belt. A former UFC featherweight title challenger, known for dangerous submissions and his guillotine choke.",
-    history:[], source:"https://www.ufc.com/athlete/brian-ortega"
-  },
 
-  {
-    id:"kye-trimble", name:"Kye Trimble", nickname:"Turbo",
-    initials:"KT", division:"Flyweight",
-    record:"Not independently verified",
-    promotion:"Community profile",
-    style:"Muay Thai / MMA",
-    hometown:"Birmingham, England",
-    bio:"A community-submitted fighter profile. The information on this page has been supplied by the profile owner and has not been independently verified.",
-    history:[],
-    community:true
-  }
+{
+id: "islam-makhachev",
+name: "Islam Makhachev",
+rank: 1,
+record: "Verify current record",
+nickname: "",
+division: "Welterweight",
+nationality: "Russia",
+style: "Sambo · Wrestling · Submission grappling",
+bio: "Russian mixed martial artist and former UFC lightweight champion. Known for elite wrestling, positional control and an effective submission game.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/islam-makhachev"
+},
+
+{
+id: "alexander-volkanovski",
+name: "Alexander Volkanovski",
+rank: 2,
+record: "Verify current record",
+nickname: "The Great",
+division: "Featherweight",
+nationality: "Australia",
+style: "Boxing · Wrestling · Kickboxing",
+bio: "Australian former UFC featherweight champion known for fight preparation, tactical adjustments, pressure and well-rounded striking-to-wrestling transitions.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/alexander-volkanovski"
+},
+
+{
+id: "petr-yan",
+name: "Petr Yan",
+rank: 3,
+record: "Verify current record",
+nickname: "No Mercy",
+division: "Bantamweight",
+nationality: "Russia",
+style: "Boxing · Muay Thai · Kickboxing",
+bio: "Russian mixed martial artist known for compact boxing, defensive discipline, body work and measured pressure.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/petr-yan"
+},
+
+{
+id: "justin-gaethje",
+name: "Justin Gaethje",
+rank: 4,
+record: "Verify current record",
+nickname: "The Highlight",
+division: "Lightweight",
+nationality: "United States",
+style: "Wrestling · Kickboxing · Boxing",
+bio: "American mixed martial artist known for aggressive pressure, damaging leg kicks and high-impact striking exchanges.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/justin-gaethje"
+},
+
+{
+id: "ilia-topuria",
+name: "Ilia Topuria",
+rank: 5,
+record: "Verify current record",
+nickname: "El Matador",
+division: "Lightweight",
+nationality: "Georgia / Spain",
+style: "Boxing · Brazilian jiu-jitsu · Wrestling",
+bio: "Georgian-Spanish mixed martial artist and former UFC featherweight champion. Known for sharp boxing combinations, exceptional punching power and a high-level grappling base.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/ilia-topuria"
+},
+
+{
+id: "joshua-van",
+name: "Joshua Van",
+rank: 6,
+record: "Verify current record",
+nickname: "The Fearless",
+division: "Flyweight",
+nationality: "Myanmar",
+style: "Boxing · Kickboxing · MMA",
+bio: "Burmese-American flyweight known for fast combinations, volume striking and a willingness to exchange at a high pace.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/joshua-van"
+},
+
+{
+id: "sean-strickland",
+name: "Sean Strickland",
+rank: 7,
+record: "Verify current record",
+nickname: "Tarzan",
+division: "Middleweight",
+nationality: "United States",
+style: "Boxing · Kickboxing",
+bio: "American mixed martial artist known for a high-volume jab, straight punches, defensive guard and relentless forward pressure.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/sean-strickland"
+},
+
+{
+id: "tom-aspinall",
+name: "Tom Aspinall",
+rank: 8,
+record: "Verify current record",
+nickname: "",
+division: "Heavyweight",
+nationality: "England",
+style: "Boxing · Brazilian jiu-jitsu · Wrestling",
+bio: "English heavyweight known for fast hands and footwork for the division, alongside a strong grappling and submission game.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/tom-aspinall"
+},
+
+{
+id: "merab-dvalishvili",
+name: "Merab Dvalishvili",
+rank: 9,
+record: "Verify current record",
+nickname: "The Machine",
+division: "Bantamweight",
+nationality: "Georgia",
+style: "Wrestling · Pressure grappling · Striking",
+bio: "Georgian mixed martial artist known for extraordinary pace, chain wrestling, repeated takedown attempts and relentless cardio.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/merab-dvalishvili"
+},
+
+{
+id: "alex-pereira",
+name: "Alex Pereira",
+rank: 10,
+record: "Verify current record",
+nickname: "Poatan",
+division: "Light Heavyweight",
+nationality: "Brazil",
+style: "Kickboxing · Muay Thai",
+bio: "Brazilian champion and elite kickboxer famous for powerful left hooks, calf kicks, distance management and knockout power.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/alex-pereira"
+},
+
+{
+id: "khamzat-chimaev",
+name: "Khamzat Chimaev",
+rank: 11,
+record: "Verify current record",
+nickname: "Borz",
+division: "Middleweight",
+nationality: "United Arab Emirates",
+style: "Wrestling · Freestyle wrestling · Submission grappling",
+bio: "Mixed martial artist known for explosive takedowns, top control and aggressive grappling transitions.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/khamzat-chimaev"
+},
+
+{
+id: "ciryl-gane",
+name: "Ciryl Gane",
+rank: 12,
+record: "Verify current record",
+nickname: "Bon Gamin",
+division: "Heavyweight",
+nationality: "France",
+style: "Muay Thai · Kickboxing · Movement-based striking",
+bio: "French heavyweight known for fluid movement, distance control, technical kickboxing and footwork uncommon at heavyweight.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/ciryl-gane"
+},
+
+{
+id: "arman-tsarukyan",
+name: "Arman Tsarukyan",
+rank: 13,
+record: "Verify current record",
+nickname: "Ahalkalakets",
+division: "Lightweight",
+nationality: "Armenia",
+style: "Wrestling · Sambo · Boxing",
+bio: "Armenian lightweight contender combining explosive wrestling, strong top control, physical pressure and improving striking.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/arman-tsarukyan"
+},
+
+{
+id: "alexandre-pantoja",
+name: "Alexandre Pantoja",
+rank: 14,
+record: "Verify current record",
+nickname: "The Cannibal",
+division: "Flyweight",
+nationality: "Brazil",
+style: "Brazilian jiu-jitsu · Wrestling · Muay Thai",
+bio: "Brazilian flyweight known for relentless grappling, dangerous back takes, submission threats and aggressive scrambles.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/alexandre-pantoja"
+},
+
+{
+id: "carlos-ulberg",
+name: "Carlos Ulberg",
+rank: 15,
+record: "Verify current record",
+nickname: "Black Jag",
+division: "Light Heavyweight",
+nationality: "New Zealand",
+style: "Kickboxing · Boxing",
+bio: "New Zealand light heavyweight known for a kickboxing background, sharp counterstriking and powerful hands.",
+last: "Latest result not independently verified.",
+source: "https://www.ufc.com/athlete/carlos-ulberg"
+},
+
+{
+id: "kye-trimble",
+name: "Kye Trimble",
+rank: null,
+record: "Not listed",
+nickname: "Turbo",
+division: "Flyweight",
+nationality: "England",
+style: "Muay Thai · MMA",
+bio: "Community fighter profile. Listed with a Muay Thai and MMA background. Professional record and verified bout history have not been supplied, so they are intentionally left unclaimed.",
+last: "No verified professional bout history supplied.",
+source: ""
+}
+
 ];
 
-fighters.sort((a,b) => a.name.localeCompare(b.name));
+// Sort alphabetically
+fighters.sort((a, b) => a.name.localeCompare(b.name));
+
+// Page elements
+const grid = document.getElementById("fighters");
+const search = document.getElementById("search");
+const profile = document.getElementById("profile");
+const directory = document.getElementById("directory");
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+}
+
+// Alphabet navigation
+function renderAlphabet() {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+  document.getElementById("alphabet").innerHTML =
+    letters.map(letter =>
+      `<button type="button" data-letter="${letter}">${letter}</button>`
+    ).join("");
+
+  document.querySelectorAll("[data-letter]").forEach(button => {
+    button.addEventListener("click", () => {
+      search.value = "";
+      renderFighters();
+
+      const letter = button.dataset.letter;
+      const fighter = fighters.find(f =>
+        f.name.toUpperCase().startsWith(letter)
+      );
+
+      if (fighter) {
+        const card = document.querySelector(
+          `[data-id="${fighter.id}"]`
+        );
+
+        if (card) {
+          card.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }
+      }
+    });
+  });
+}
+
+// Fighter directory
+function renderFighters() {
+  const query = search.value.trim().toLowerCase();
+
+  const filtered = fighters.filter(fighter => {
+    const searchable = [
+      fighter.name,
+      fighter.nickname,
+      fighter.division,
+      fighter.nationality
+    ].join(" ").toLowerCase();
+
+    return searchable.includes(query);
+  });
+
+  document.getElementById("count").textContent =
+    `Showing ${filtered.length} of ${fighters.length} fighters`;
+
+  grid.innerHTML = filtered.map(fighter => `
+    <button class="card" type="button" data-id="${escapeHTML(fighter.id)}">
+      <div class="cardtop">
+        <span class="rank">
+          ${fighter.rank ? `P4P #${fighter.rank}` : "COMMUNITY PROFILE"}
+        </span>
+        <span class="record">${escapeHTML(fighter.record)}</span>
+      </div>
+
+      <h2>${escapeHTML(fighter.name)}</h2>
+      <div class="nick">${escapeHTML(fighter.nickname)}</div>
+      <div class="meta">
+        ${escapeHTML(fighter.division)} · ${escapeHTML(fighter.nationality)}
+      </div>
+    </button>
+  `).join("") || `<p class="sub">No fighters found.</p>`;
+
+  grid.querySelectorAll("[data-id]").forEach(card => {
+    card.addEventListener("click", () => {
+      openFighter(card.dataset.id, true);
+    });
+  });
+}
+
+// Individual fighter profile
+function openFighter(id, pushHistory) {
+  const fighter = fighters.find(f => f.id === id);
+
+  if (!fighter) return;
+
+  if (pushHistory) {
+    history.pushState(
+      { fighter: id },
+      "",
+      `#fighter/${id}`
+    );
+  }
+
+  directory.style.display = "none";
+  profile.style.display = "block";
+
+  window.scrollTo(0, 0);
+
+  document.getElementById("profileContent").innerHTML = `
+    <div class="rank">
+      ${fighter.rank
+        ? `UFC MEN'S P4P RANK #${fighter.rank}`
+        : "MMA MEDIA COMMUNITY PROFILE"}
+    </div>
+
+    <h2>${escapeHTML(fighter.name)}</h2>
+
+    <div class="nickname">
+      ${escapeHTML(fighter.nickname)}
+    </div>
+
+    <div class="profilegrid">
+      <div class="stat">
+        <small>Professional record</small>
+        <strong>${escapeHTML(fighter.record)}</strong>
+      </div>
+
+      <div class="stat">
+        <small>Division</small>
+        <strong>${escapeHTML(fighter.division)}</strong>
+      </div>
+
+      <div class="stat">
+        <small>Nationality</small>
+        <strong>${escapeHTML(fighter.nationality)}</strong>
+      </div>
+
+      <div class="stat">
+        <small>Fighting style</small>
+        <strong>${escapeHTML(fighter.style)}</strong>
+      </div>
+    </div>
+
+    <section>
+      <h3>Biography</h3>
+      <p class="bio">${escapeHTML(fighter.bio)}</p>
+    </section>
+
+    <section>
+      <h3>Latest recorded result</h3>
+      <div class="fight">
+        ${escapeHTML(fighter.last)}
+      </div>
+    </section>
+
+    ${fighter.source ? `
+      <a class="source"
+         href="${escapeHTML(fighter.source)}"
+         target="_blank"
+         rel="noopener">
+        UFC athlete profile ↗
+      </a>
+    ` : ""}
+
+    <p class="note">
+      Records and bout details are not a live feed.
+      Check official sources for current information.
+    </p>
+  `;
+}
+
+// Return to directory
+function goHome(pushHistory) {
+  if (pushHistory) {
+    history.pushState({}, "", location.pathname + location.search);
+  }
+
+  profile.style.display = "none";
+  directory.style.display = "block";
+
+  window.scrollTo(0, 0);
+}
+
+// Search
+search.addEventListener("input", renderFighters);
+
+// Clear search
+document.getElementById("clear").addEventListener("click", () => {
+  search.value = "";
+  renderFighters();
+  search.focus();
+});
+
+// Back button
+document.getElementById("back").addEventListener("click", () => {
+  goHome(true);
+});
+
+// Browser navigation
+window.addEventListener("popstate", () => {
+  const match = location.hash.match(/^#fighter\/(.+)$/);
+
+  if (match) {
+    openFighter(decodeURIComponent(match[1]), false);
+  } else {
+    goHome(false);
+  }
+});
+
+// Initial page load
+renderAlphabet();
+renderFighters();
+
+const initialRoute = location.hash.match(/^#fighter\/(.+)$/);
+
+if (initialRoute) {
+  openFighter(decodeURIComponent(initialRoute[1]), false);
+}
 
 </script>
+
 </body>
 </html>
