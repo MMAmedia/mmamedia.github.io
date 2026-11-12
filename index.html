@@ -8,7 +8,7 @@
 <meta name="google-site-verification" content="H0ZS6fMXmqeoVIKF8ISfKIhSn3132TvZBllC0p6esVo">
 
 <title>MMA Media</title>
-<meta name="description" content="Kye “Turbo” Trimble is an England-based MMA and Muay Thai athlete. Discover his fighter biography, background, fighting style and profile on MMA MEDIA.">
+<meta name="description" content="Kye “Turbo” Trimble is an England-based MMA and Muay Thai athlete. Discover fighter biographies, UFC rankings, backgrounds and fight histories on MMA MEDIA.">
 
 <style>
 :root {
@@ -19,6 +19,7 @@
   --muted: #a5a5a5;
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--background);
@@ -44,6 +45,29 @@ nav a {
   text-decoration: none;
   margin-left: 22px;
   font-size: 13px;
+}
+.division-nav {
+  padding: 20px 7%;
+  background: #151515;
+  border-bottom: 1px solid #292929;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+}
+.division-nav a {
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid #594522;
+  padding: 9px 13px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: .2s;
+}
+.division-nav a:hover {
+  background: var(--gold);
+  color: #101010;
 }
 .hero {
   min-height: 390px;
@@ -142,6 +166,58 @@ section { margin-bottom: 55px; }
   font-weight: bold;
   text-align: right;
 }
+.rankings {
+  max-width: 1100px;
+  margin: auto;
+  padding: 38px 22px 10px;
+}
+.ranking-division {
+  margin-bottom: 48px;
+  scroll-margin-top: 20px;
+}
+.ranking-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.ranking-heading a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 12px;
+}
+.ranking-champion {
+  background: #302719;
+  border: 1px solid var(--gold);
+  padding: 16px;
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-weight: bold;
+}
+.ranking-row {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 12px;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid #292929;
+  padding: 12px 16px;
+  margin-bottom: 7px;
+}
+.ranking-number {
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 17px;
+}
+.ranking-name {
+  color: var(--text);
+  font-weight: bold;
+}
+.ranking-note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 12px;
+}
 footer {
   border-top: 1px solid #292929;
   text-align: center;
@@ -158,6 +234,8 @@ footer {
 @media (max-width: 600px) {
   header { padding: 18px 5%; }
   nav a { margin-left: 10px; font-size: 11px; }
+  .division-nav { padding: 15px 5%; gap: 7px; }
+  .division-nav a { padding: 9px 10px; font-size: 10px; }
   .hero { padding: 65px 7%; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .fight { grid-template-columns: 1fr; }
@@ -167,14 +245,34 @@ footer {
 </head>
 <body>
 
-<header>
+<header id="top">
   <div class="logo">MMA MEDIA</div>
   <nav>
     <a href="#profile">PROFILE</a>
     <a href="#record">RECORD</a>
     <a href="#bio">BIO</a>
+    <a href="#rankings">RANKINGS</a>
   </nav>
 </header>
+
+<!-- MEN'S DIVISION NAVIGATION -->
+
+<nav class="division-nav">
+  <a href="#flyweight-rankings">FLYWEIGHT</a>
+  <a href="#bantamweight-rankings">BANTAMWEIGHT</a>
+  <a href="#featherweight-rankings">FEATHERWEIGHT</a>
+  <a href="#lightweight-rankings">LIGHTWEIGHT</a>
+  <a href="#welterweight-rankings">WELTERWEIGHT</a>
+  <a href="#middleweight-rankings">MIDDLEWEIGHT</a>
+  <a href="#light-heavyweight-rankings">LIGHT HEAVYWEIGHT</a>
+  <a href="#heavyweight-rankings">HEAVYWEIGHT</a>
+</nav>
+
+<!-- DIVISION RANKINGS -->
+
+<div id="rankings" class="rankings"></div>
+
+<!-- KYE TRIMBLE PROFILE -->
 
 <div class="hero">
   <div>
@@ -211,10 +309,8 @@ footer {
       Kye "Turbo" Trimble is an England-based flyweight fighter profile.
       He has trained alongside his uncle at Team Renegade in Solihull,
       Birmingham, for seven years.
-
       <p>His approach combines Muay Thai with mixed martial arts, with
       a greater focus on MMA.</p>
-
       <p>Outside the gym, he puts the gloves down to focus on his
       college studies in Tamworth. His ambition is simple: to be the best.</p>
     </div>
@@ -222,36 +318,598 @@ footer {
 
   <section id="record">
     <h2 class="section-title">Fight history</h2>
-
     <div class="fight">
-      <div>
-        <h3>Jayden Carter</h3>
-        <p>Opponent's previous record: 4–0</p>
-      </div>
+      <div><h3>Jayden Carter</h3><p>Opponent's previous record: 4–0</p></div>
       <div class="result">TKO · ROUND 3</div>
     </div>
-
     <div class="fight">
-      <div>
-        <h3>Batishchev Lavrenti Yaroslavovich</h3>
-        <p>Opponent's previous record: 2–1</p>
-      </div>
+      <div><h3>Batishchev Lavrenti Yaroslavovich</h3><p>Opponent's previous record: 2–1</p></div>
       <div class="result">TKO · ROUND 1</div>
     </div>
-
     <div class="fight">
-      <div>
-        <h3>Brandon Tafa</h3>
-        <p>Opponent's previous record: 5–2</p>
-      </div>
+      <div><h3>Brandon Tafa</h3><p>Opponent's previous record: 5–2</p></div>
       <div class="result">DECISION · 30–27</div>
     </div>
   </section>
 </main>
 
+<!-- ILIA TOPURIA PROFILE -->
+
+<div class="hero" id="ilia">
+  <div>
+    <div class="eyebrow">GEORGIA · SPAIN · LIGHTWEIGHT</div>
+    <h1>ILIA <span>"EL MATADOR"</span><br>TOPURIA</h1>
+    <p>Professional mixed martial arts fighter · 155 lbs</p>
+    <div class="record">
+      <div><strong>17–1</strong><small>PRO RECORD</small></div>
+      <div><strong>7</strong><small>KO / TKO WINS</small></div>
+      <div><strong>155</strong><small>POUNDS</small></div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section id="ilia-profile">
+    <h2 class="section-title">Fighter details</h2>
+    <div class="stats">
+      <div class="stat"><small>Division</small><strong>Lightweight</strong></div>
+      <div class="stat"><small>Weight</small><strong>155 lbs</strong></div>
+      <div class="stat"><small>Height</small><strong>5'7"</strong></div>
+      <div class="stat"><small>Reach</small><strong>69 inches</strong></div>
+      <div class="stat"><small>Stance</small><strong>Orthodox</strong></div>
+      <div class="stat"><small>Nationality</small><strong>Georgian / Spanish</strong></div>
+      <div class="stat"><small>Date of birth</small><strong>21 January 1997</strong></div>
+      <div class="stat"><small>Team</small><strong>Team Topuria</strong></div>
+      <div class="stat"><small>Fighting style</small><strong>Brazilian Jiu-Jitsu</strong></div>
+      <div class="stat"><small>Birthplace</small><strong>Halle, Germany</strong></div>
+      <div class="stat"><small>Fighting out of</small><strong>Alicante, Spain</strong></div>
+      <div class="stat"><small>UFC debut</small><strong>2020</strong></div>
+    </div>
+  </section>
+
+  <section id="ilia-bio">
+    <h2 class="section-title">Biography</h2>
+    <div class="bio">
+      Ilia "El Matador" Topuria is a Georgian-Spanish professional
+      mixed martial artist who competes in the UFC lightweight division.
+      <p>Born on 21 January 1997 in Halle, Germany, Topuria began
+      training in Brazilian Jiu-Jitsu at a young age. He later developed
+      into one of the most dangerous all-round fighters in mixed martial arts.</p>
+      <p>Topuria became the UFC featherweight champion after knocking
+      out Alexander Volkanovski at UFC 298 in February 2024. He defended
+      the title against Max Holloway at UFC 308 before moving up to
+      lightweight.</p>
+      <p>At UFC 317 in June 2025, he defeated Charles Oliveira by
+      first-round knockout to become UFC lightweight champion.
+      He subsequently lost the lightweight title to Justin Gaethje
+      at UFC Freedom 250 in June 2026.</p>
+      <p>Known for his powerful boxing, Brazilian Jiu-Jitsu and
+      confidence inside the Octagon, Topuria has established himself
+      as one of the leading fighters of his generation.</p>
+    </div>
+  </section>
+
+  <section id="ilia-record">
+    <h2 class="section-title">UFC fight history</h2>
+    <div class="fight"><div><h3>Justin Gaethje</h3><p>UFC Freedom 250 · 14 June 2026</p></div><div class="result">LOSS · TKO · ROUND 4</div></div>
+    <div class="fight"><div><h3>Charles Oliveira</h3><p>UFC 317 · 28 June 2025</p></div><div class="result">WIN · KO · ROUND 1</div></div>
+    <div class="fight"><div><h3>Max Holloway</h3><p>UFC 308 · 26 October 2024</p></div><div class="result">WIN · KO · ROUND 3</div></div>
+    <div class="fight"><div><h3>Alexander Volkanovski</h3><p>UFC 298 · 17 February 2024</p></div><div class="result">WIN · KO · ROUND 2</div></div>
+    <div class="fight"><div><h3>Josh Emmett</h3><p>UFC on ABC 5 · 24 June 2023</p></div><div class="result">WIN · UNANIMOUS DECISION</div></div>
+    <div class="fight"><div><h3>Bryce Mitchell</h3><p>UFC 282 · 10 December 2022</p></div><div class="result">WIN · SUBMISSION · ROUND 2</div></div>
+    <div class="fight"><div><h3>Jai Herbert</h3><p>UFC Fight Night · 19 March 2022</p></div><div class="result">WIN · KO · ROUND 2</div></div>
+    <div class="fight"><div><h3>Ryan Hall</h3><p>UFC 264 · 10 July 2021</p></div><div class="result">WIN · KO · ROUND 1</div></div>
+    <div class="fight"><div><h3>Damon Jackson</h3><p>UFC Fight Night · 5 December 2020</p></div><div class="result">WIN · KO · ROUND 1</div></div>
+    <div class="fight"><div><h3>Youssef Zalal</h3><p>UFC Fight Night · 10 October 2020</p></div><div class="result">WIN · UNANIMOUS DECISION</div></div>
+  </section>
+</main>
+
+<!-- JON JONES PROFILE -->
+
+<div class="hero" id="jon">
+  <div>
+    <div class="eyebrow">UNITED STATES · HEAVYWEIGHT</div>
+    <h1>JON <span>"BONES"</span><br>JONES</h1>
+    <p>Professional mixed martial arts fighter · Former two-division UFC champion</p>
+    <div class="record">
+      <div><strong>28–1</strong><small>PRO WINS / LOSSES</small></div>
+      <div><strong>1</strong><small>NO CONTEST</small></div>
+      <div><strong>11</strong><small>KO / TKO WINS</small></div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section id="jon-profile">
+    <h2 class="section-title">Fighter details</h2>
+    <div class="stats">
+      <div class="stat"><small>Division</small><strong>Heavyweight</strong></div>
+      <div class="stat"><small>Weight</small><strong>240 lbs</strong></div>
+      <div class="stat"><small>Height</small><strong>6'4"</strong></div>
+      <div class="stat"><small>Reach</small><strong>84.5 inches</strong></div>
+      <div class="stat"><small>Stance</small><strong>Orthodox</strong></div>
+      <div class="stat"><small>Nationality</small><strong>American</strong></div>
+      <div class="stat"><small>Date of birth</small><strong>19 July 1987</strong></div>
+      <div class="stat"><small>Birthplace</small><strong>Rochester, New York</strong></div>
+      <div class="stat"><small>Team</small><strong>Team Jones</strong></div>
+      <div class="stat"><small>UFC debut</small><strong>9 August 2008</strong></div>
+      <div class="stat"><small>KO / TKO wins</small><strong>11</strong></div>
+      <div class="stat"><small>Submission wins</small><strong>7</strong></div>
+    </div>
+  </section>
+
+  <section id="jon-bio">
+    <h2 class="section-title">Biography</h2>
+    <div class="bio">
+      Jon "Bones" Jones is an American professional mixed martial
+      artist widely regarded as one of the greatest fighters in
+      the history of the sport.
+      <p>Born on 19 July 1987 in Rochester, New York, Jones made
+      his UFC debut in August 2008. He quickly became known for
+      his unusual striking range, creative techniques, wrestling
+      ability and high-level fight intelligence.</p>
+      <p>Jones first became UFC light heavyweight champion in
+      March 2011 after defeating Mauricio "Shogun" Rua. During
+      his first championship reign, he became known for a long
+      series of successful title defences. He later regained
+      the light heavyweight championship and also won the
+      interim title in 2016.</p>
+      <p>In March 2023, Jones moved up to heavyweight and
+      submitted Ciryl Gane in the first round to win the vacant
+      UFC heavyweight championship. He defended the title
+      against Stipe Miocic at UFC 309 in November 2024,
+      winning by third-round TKO.</p>
+      <p>Jones announced his retirement in June 2025 and
+      vacated the heavyweight championship. He later expressed
+      interest in returning, but has not competed since UFC 309.
+      His future in professional MMA remains uncertain.</p>
+      <p>His professional record includes one disqualification
+      loss to Matt Hamill and one no contest against Daniel
+      Cormier, after their UFC 214 result was overturned.</p>
+    </div>
+  </section>
+
+  <section id="jon-record">
+    <h2 class="section-title">UFC fight history</h2>
+    <div class="fight"><div><h3>Stipe Miocic</h3><p>UFC 309 · 16 November 2024</p></div><div class="result">WIN · TKO · ROUND 3</div></div>
+    <div class="fight"><div><h3>Ciryl Gane</h3><p>UFC 285 · 4 March 2023</p></div><div class="result">WIN · SUBMISSION · ROUND 1</div></div>
+    <div class="fight"><div><h3>Dominick Reyes</h3><p>UFC 247 · 8 February 2020</p></div><div class="result">WIN · UNANIMOUS DECISION</div></div>
+    <div class="fight"><div><h3>Thiago Santos</h3><p>UFC 239 · 6 July 2019</p></div><div class="result">WIN · SPLIT DECISION</div></div>
+    <div class="fight"><div><h3>Anthony Smith</h3><p>UFC 235 · 2 March 2019</p></div><div class="result">WIN · UNANIMOUS DECISION</div></div>
+    <div class="fight"><div><h3>Alexander Gustafsson</h3><p>UFC 232 · 29 December 2018</p></div><div class="result">WIN · TKO · ROUND 3</div></div>
+    <div class="fight"><div><h3>Daniel Cormier</h3><p>UFC 214 · 29 July 2017</p></div><div class="result">NO CONTEST · OVERTURNED</div></div>
+    <div class="fight"><div><h3>Ovince Saint Preux</h3><p>UFC 197 · 23 April 2016</p></div><div class="result">WIN · UNANIMOUS DECISION</div></div>
+    <div class="fight"><div><h3>Daniel Cormier</h3><p>UFC 182 · 3 January 2015</p></div><div class="result">WIN · UNANIMOUS DECISION</div></div>
+    <div class="fight"><div><h3>Glover Teixeira</h3><p>UFC 172 · 26 April 2014</p></div><div class="result">WIN · UNANIMOUS DECISION</div></div>
+    <div class="fight"><div><h3>Matt Hamill</h3><p>The Ultimate Fighter 10 Finale · 5 December 2009</p></div><div class="result">LOSS · DISQUALIFICATION</div></div>
+  </section>
+</main>
+
+<!-- ADDITIONAL LIGHTWEIGHT FIGHTER PROFILES -->
+
+<div id="additional-fighters"></div>
+
+<script>
+/* CURRENT MEN'S UFC DIVISION RANKINGS */
+
+const divisionRankings = [
+  {
+    id:"flyweight-rankings",
+    name:"Flyweight",
+    champion:"Joshua Van",
+    fighters:[
+      "Alexandre Pantoja","Manel Kape","Brandon Royval",
+      "Tatsuro Taira","Kyoji Horiguchi","Lone’er Kavanagh",
+      "Asu Almabayev","Brandon Moreno","Amir Albazi",
+      "Ramazan Temirov","Tim Elliott","Sumudaerji",
+      "Steve Erceg","Charles Johnson","Tagir Ulanbekov"
+    ]
+  },
+  {
+    id:"bantamweight-rankings",
+    name:"Bantamweight",
+    champion:"Petr Yan",
+    fighters:[
+      "Merab Dvalishvili","Sean O'Malley","Song Yadong",
+      "Umar Nurmagomedov","Mario Bautista","Cory Sandhagen",
+      "Payton Talbott","David Martinez","Aiemann Zahabi",
+      "Raul Rosas Jr.","Marlon Vera","Deiveson Figueiredo",
+      "Marcus McGhee","Raoni Barcelos","Bryce Mitchell"
+    ]
+  },
+  {
+    id:"featherweight-rankings",
+    name:"Featherweight",
+    champion:"Alexander Volkanovski",
+    fighters:[
+      "Movsar Evloev","Diego Lopes","Lerone Murphy",
+      "Aljamain Sterling","Jean Silva","Arnold Allen",
+      "Yair Rodriguez","Youssef Zalal","Kevin Vallejos",
+      "Steve Garcia","Aaron Pico","Melquizael Costa",
+      "Brian Ortega","Patricio Pitbull","David Onama"
+    ]
+  },
+  {
+    id:"lightweight-rankings",
+    name:"Lightweight",
+    champion:"Justin Gaethje",
+    fighters:[
+      "Ilia Topuria","Arman Tsarukyan","Charles Oliveira",
+      "Max Holloway","Paddy Pimblett","Benoît Saint Denis",
+      "Quillan Salkilld","Mauricio Ruffy","Salahdine Parnasse",
+      "Mateusz Gamrot","Rafael Fiziev","Tom Nolan",
+      "Renato Moicano","Dan Hooker","Grant Dawson"
+    ]
+  },
+  {
+    id:"welterweight-rankings",
+    name:"Welterweight",
+    champion:"Islam Makhachev",
+    fighters:[
+      "Ian Machado Garry","Carlos Prates","Michael Morales",
+      "Jack Della Maddalena","Gabriel Bonfim","Sean Brady",
+      "Belal Muhammad","Leon Edwards","Mike Malott",
+      "Kamaru Usman","Uroš Medić","Yaroslav Amosov",
+      "Joaquin Buckley","Daniel Rodriguez","Kevin Holland"
+    ]
+  },
+  {
+    id:"middleweight-rankings",
+    name:"Middleweight",
+    champion:"Sean Strickland",
+    fighters:[
+      "Khamzat Chimaev","Dricus Du Plessis","Nassourdine Imavov",
+      "Brendan Allen","Caio Borralho","Joe Pyfer",
+      "Gregory Rodrigues","Anthony Hernandez","Israel Adesanya",
+      "Christian Leroy Duncan","Abus Magomedov","Jared Cannonier",
+      "Ikram Aliskerov","Bo Nickal","Shara Magomedov"
+    ]
+  },
+  {
+    id:"light-heavyweight-rankings",
+    name:"Light Heavyweight",
+    champion:"Carlos Ulberg",
+    fighters:[
+      "Magomed Ankalaev","Jiří Procházka","Alex Pereira",
+      "Khalil Rountree Jr.","Navajo Stirling","Paulo Costa",
+      "Dominick Reyes","Bogdan Guskov","Azamat Murzakanov",
+      "Robert Whittaker","Jan Błachowicz","Abdul Rakhman Yakhyaev",
+      "Alonzo Menifield","Reinier de Ridder","Nikita Krylov"
+    ]
+  },
+  {
+    id:"heavyweight-rankings",
+    name:"Heavyweight",
+    champion:"Ciryl Gane",
+    fighters:[
+      "Tom Aspinall","Alexander Volkov","Sergei Pavlovich",
+      "Josh Hokit","Curtis Blaydes","Rizvan Kuniev",
+      "Johnny Walker","Waldo Cortes Acosta","Vitor Petrino",
+      "Serghei Spivac","Ante Delija","Valter Walker",
+      "Tyrell Fortune","Derrick Lewis","Aleksandar Rakić"
+    ]
+  }
+];
+
+const rankingsContainer = document.getElementById("rankings");
+
+divisionRankings.forEach(division => {
+  const section = document.createElement("section");
+  section.className = "ranking-division";
+  section.id = division.id;
+
+  const heading = document.createElement("div");
+  heading.className = "ranking-heading";
+
+  const title = document.createElement("h2");
+  title.className = "section-title";
+  title.textContent = division.name + " Rankings";
+
+  const back = document.createElement("a");
+  back.href = "#top";
+  back.textContent = "BACK TO TOP ↑";
+
+  heading.appendChild(title);
+  heading.appendChild(back);
+  section.appendChild(heading);
+
+  const champion = document.createElement("div");
+  champion.className = "ranking-champion";
+  champion.textContent = "CHAMPION · " + division.champion;
+  section.appendChild(champion);
+
+  division.fighters.forEach((fighter, index) => {
+    const row = document.createElement("div");
+    row.className = "ranking-row";
+
+    const number = document.createElement("div");
+    number.className = "ranking-number";
+    number.textContent = "#" + (index + 1);
+
+    const name = document.createElement("div");
+    name.className = "ranking-name";
+    name.textContent = fighter;
+
+    row.appendChild(number);
+    row.appendChild(name);
+    section.appendChild(row);
+  });
+
+  rankingsContainer.appendChild(section);
+});
+
+/* ADDITIONAL LIGHTWEIGHT FIGHTER PROFILES */
+
+const fighters = [
+{
+name:"Justin Gaethje",nickname:"The Highlight",country:"United States",
+division:"Lightweight",record:"28–5",kos:"21",weight:"155",
+height:"5'11\"",reach:"70 inches",stance:"Orthodox",
+dob:"14 November 1988",birthplace:"Tucson, Arizona",
+team:"Genesis Training Center",style:"Wrestling / Kickboxing",debut:"2017",
+bio:"Justin 'The Highlight' Gaethje is an American mixed martial artist known for his aggressive pressure, powerful leg kicks and high-paced striking. A former interim UFC lightweight champion and BMF champion, Gaethje captured the undisputed lightweight championship at UFC Freedom 250 in June 2026 after defeating Ilia Topuria. His wrestling background and willingness to engage in high-intensity exchanges have made him one of the division's most recognisable fighters.",
+fights:[
+["Ilia Topuria","UFC Freedom 250 · 14 June 2026","WIN · TKO · ROUND 4"],
+["Paddy Pimblett","UFC 324 · 24 January 2026","WIN · DECISION"],
+["Rafael Fiziev","UFC 313 · 8 March 2025","WIN · DECISION"],
+["Max Holloway","UFC 300 · 13 April 2024","LOSS · KO · ROUND 5"]
+]},
+{
+name:"Arman Tsarukyan",nickname:"Ahalkalakets",country:"Armenia",
+division:"Lightweight",record:"24–3",kos:"10",weight:"155",
+height:"5'7\"",reach:"72.5 inches",stance:"Orthodox",
+dob:"11 October 1996",birthplace:"Akhalkalaki, Georgia",
+team:"Syndicate MMA",style:"Wrestling / Kickboxing",debut:"2019",
+bio:"Arman Tsarukyan is an Armenian professional mixed martial artist who competes in the UFC lightweight division. Known for his explosive wrestling, physical strength and improving striking, Tsarukyan has developed into one of the division's leading contenders. He has recorded major victories over Charles Oliveira, Beneil Dariush and Dan Hooker.",
+fights:[
+["Mauricio Ruffy","UFC 331 · 19 September 2026","WIN · KO · ROUND 1"],
+["Dan Hooker","UFC Fight Night · 22 November 2025","WIN · SUBMISSION · ROUND 2"],
+["Charles Oliveira","UFC 300 · 13 April 2024","WIN · SPLIT DECISION"],
+["Beneil Dariush","UFC Fight Night · 2 December 2023","WIN · KO · ROUND 1"]
+]},
+{
+name:"Charles Oliveira",nickname:"Do Bronx",country:"Brazil",
+division:"Lightweight",record:"37–11",kos:"10",weight:"155",
+height:"5'10\"",reach:"74 inches",stance:"Orthodox",
+dob:"17 October 1989",birthplace:"Guarujá, São Paulo, Brazil",
+team:"Bronx's Gold Team",style:"Brazilian Jiu-Jitsu",debut:"2010",
+bio:"Charles 'Do Bronx' Oliveira is a Brazilian mixed martial artist and former UFC lightweight champion. Widely recognised for his elite submission game, Oliveira holds records for UFC submission victories and finishes. His attacking jiu-jitsu, dangerous striking and ability to recover from difficult positions have made him one of the most exciting fighters in UFC history.",
+fights:[
+["Max Holloway","UFC 326 · 7 March 2026","WIN · UNANIMOUS DECISION"],
+["Mateusz Gamrot","UFC Fight Night · 11 October 2025","WIN · SUBMISSION · ROUND 2"],
+["Ilia Topuria","UFC 317 · 28 June 2025","LOSS · KO · ROUND 1"],
+["Arman Tsarukyan","UFC 300 · 13 April 2024","LOSS · SPLIT DECISION"]
+]},
+{
+name:"Max Holloway",nickname:"Blessed",country:"United States",
+division:"Lightweight",record:"28–9",kos:"13",weight:"155",
+height:"5'11\"",reach:"69 inches",stance:"Orthodox",
+dob:"4 December 1991",birthplace:"Waianae, Hawaii",
+team:"Gracie Technics",style:"Muay Thai / Boxing",debut:"2012",
+bio:"Max 'Blessed' Holloway is an American professional mixed martial artist from Hawaii. A former long-reigning UFC featherweight champion and BMF champion, Holloway is celebrated for his extraordinary pace, volume striking, durability and boxing combinations. He has competed against many of the greatest fighters of his generation and remains a major presence in the lightweight division.",
+fights:[
+["Conor McGregor","UFC · 11 July 2026","WIN · TKO · ROUND 1"],
+["Charles Oliveira","UFC 326 · 7 March 2026","LOSS · UNANIMOUS DECISION"],
+["Dustin Poirier","UFC 318 · 19 July 2025","WIN · UNANIMOUS DECISION"],
+["Ilia Topuria","UFC 308 · 26 October 2024","LOSS · KO · ROUND 3"]
+]},
+{
+name:"Paddy Pimblett",nickname:"The Baddy",country:"England",
+division:"Lightweight",record:"24–4",kos:"7",weight:"155",
+height:"5'10\"",reach:"73 inches",stance:"Orthodox",
+dob:"3 January 1995",birthplace:"Liverpool, England",
+team:"Next Generation MMA",style:"Brazilian Jiu-Jitsu / MMA",debut:"2021",
+bio:"Paddy 'The Baddy' Pimblett is an English professional mixed martial artist from Liverpool. Known for his charismatic personality, aggressive grappling and submission ability, Pimblett became one of the UFC's most recognisable lightweight fighters. He has developed a strong following through his entertaining style and performances inside the Octagon.",
+fights:[
+["Benoît Saint Denis","UFC 329 · 11 July 2026","WIN · SUBMISSION · ROUND 1"],
+["Justin Gaethje","UFC 324 · 24 January 2026","LOSS · UNANIMOUS DECISION"],
+["Michael Chandler","UFC 314 · 12 April 2025","WIN · TKO · ROUND 3"],
+["King Green","UFC 304 · 27 July 2024","WIN · SUBMISSION · ROUND 1"]
+]},
+{
+name:"Benoît Saint Denis",nickname:"God of War",country:"France",
+division:"Lightweight",record:"17–4",kos:"6",weight:"155",
+height:"5'11\"",reach:"73 inches",stance:"Orthodox",
+dob:"18 December 1995",birthplace:"Nîmes, France",
+team:"Venum Training Camp Paris",style:"MMA / Grappling",debut:"2021",
+bio:"Benoît Saint Denis is a French professional mixed martial artist and former member of the French Special Forces. Nicknamed 'God of War', Saint Denis is known for his relentless pressure, physical conditioning, aggressive grappling and finishing ability. His background in military service and Brazilian jiu-jitsu has helped shape his intense approach to competition.",
+fights:[
+["Paddy Pimblett","UFC 329 · 11 July 2026","LOSS · SUBMISSION · ROUND 1"],
+["Dan Hooker","UFC 325 · 31 January 2026","WIN · TKO · ROUND 2"],
+["Beneil Dariush","UFC 322 · 15 November 2025","WIN · KO · ROUND 1"],
+["Mauricio Ruffy","UFC Fight Night · 6 September 2025","WIN · SUBMISSION · ROUND 2"]
+]},
+{
+name:"Quillan Salkilld",nickname:"",country:"Australia",
+division:"Lightweight",record:"13–1",kos:"5",weight:"155",
+height:"6'0\"",reach:"75 inches",stance:"Orthodox",
+dob:"10 September 1999",birthplace:"Pinjarra, Western Australia",
+team:"Luistro Combat Academy",style:"MMA",debut:"2025",
+bio:"Quillan Salkilld is an Australian professional mixed martial artist competing in the UFC lightweight division. A well-rounded fighter with both knockout power and submission ability, Salkilld made an immediate impression after joining the UFC. He has developed a reputation for fast starts and finishing fights.",
+fights:[
+["Mateusz Gamrot","UFC · 8 August 2026","WIN · SUBMISSION · ROUND 1"],
+["Beneil Dariush","UFC · 2 May 2026","WIN · KO · ROUND 1"],
+["Jake Matthews","UFC · 2026","WIN"],
+["Jamie Mullarkey","UFC · 31 January 2026","WIN · SUBMISSION · ROUND 1"]
+]},
+{
+name:"Mauricio Ruffy",nickname:"",country:"Brazil",
+division:"Lightweight",record:"14–3",kos:"13",weight:"155",
+height:"5'11\"",reach:"75 inches",stance:"Orthodox",
+dob:"17 October 1996",birthplace:"São Paulo, Brazil",
+team:"Fighting Nerds",style:"Kickboxing / MMA",debut:"2024",
+bio:"Mauricio Ruffy is a Brazilian mixed martial artist known for his explosive striking and knockout power. A member of the Fighting Nerds team, Ruffy built his reputation through dynamic combinations, sharp counter-striking and an aggressive finishing style. He has recorded 13 professional knockout victories.",
+fights:[
+["Arman Tsarukyan","UFC 331 · 19 September 2026","LOSS · KO · ROUND 1"],
+["Michael Chandler","UFC Freedom 250 · 14 June 2026","WIN · KO · ROUND 1"],
+["Rafael Fiziev","UFC 325 · 31 January 2026","WIN · TKO · ROUND 2"],
+["Benoît Saint Denis","UFC Fight Night · 6 September 2025","LOSS · SUBMISSION · ROUND 2"]
+]},
+{
+name:"Salahdine Parnasse",nickname:"Lion of Atlas",country:"France",
+division:"Lightweight",record:"24–2",kos:"9",weight:"155",
+height:"5'10\"",reach:"71.5 inches",stance:"Orthodox",
+dob:"4 January 1998",birthplace:"Aubervilliers, France",
+team:"Atch Academy",style:"MMA / Kickboxing",debut:"2026",
+bio:"Salahdine Parnasse is a French mixed martial artist widely regarded as one of Europe's standout fighters. Before joining the UFC, he established himself as a champion outside the organisation, earning recognition for his striking, speed and finishing ability. Known as the 'Lion of Atlas', Parnasse made his UFC debut in September 2026.",
+fights:[
+["Dan Hooker","UFC Fight Night · 5 September 2026","WIN · TKO · ROUND 1"]
+]},
+{
+name:"Mateusz Gamrot",nickname:"Gamer",country:"Poland",
+division:"Lightweight",record:"26–5",kos:"8",weight:"155",
+height:"5'10\"",reach:"70.5 inches",stance:"Southpaw",
+dob:"11 December 1990",birthplace:"Bielsko-Biała, Poland",
+team:"American Top Team",style:"Wrestling / Grappling",debut:"2020",
+bio:"Mateusz 'Gamer' Gamrot is a Polish professional mixed martial artist and former dual-division KSW champion. Known for his wrestling, relentless pace and chain grappling, Gamrot has competed against many of the UFC's leading lightweights. His technical wrestling and ability to maintain pressure have been central to his success.",
+fights:[
+["Quillan Salkilld","UFC · 8 August 2026","LOSS · SUBMISSION · ROUND 1"],
+["Charles Oliveira","UFC Fight Night · 11 October 2025","LOSS · SUBMISSION · ROUND 2"],
+["Dan Hooker","UFC · 2025","WIN"],
+["Rafael Fiziev","UFC Fight Night · 23 September 2023","WIN · TKO · ROUND 2"]
+]},
+{
+name:"Rafael Fiziev",nickname:"Ataman",country:"Kyrgyzstan",
+division:"Lightweight",record:"14–5",kos:"9",weight:"155",
+height:"5'8\"",reach:"71.5 inches",stance:"Orthodox",
+dob:"5 March 1993",birthplace:"Kyrgyzstan",
+team:"Tiger Muay Thai",style:"Muay Thai",debut:"2019",
+bio:"Rafael Fiziev is a Kyrgyzstani professional mixed martial artist known for his elite Muay Thai striking. A former combat sports specialist, Fiziev is recognised for his speed, defensive movement, spinning attacks and technical kickboxing. He has established himself as one of the UFC lightweight division's most dangerous stand-up fighters.",
+fights:[
+["Manuel Torres","UFC Fight Night · 27 June 2026","WIN · KO · ROUND 2"],
+["Mauricio Ruffy","UFC 325 · 31 January 2026","LOSS · TKO · ROUND 2"],
+["Ignacio Bahamondes","UFC on ABC · 21 June 2025","WIN · UNANIMOUS DECISION"],
+["Justin Gaethje","UFC 313 · 8 March 2025","LOSS · UNANIMOUS DECISION"]
+]},
+{
+name:"Tom Nolan",nickname:"Big Train",country:"Australia",
+division:"Lightweight",record:"12–1",kos:"6",weight:"155",
+height:"6'2\"",reach:"73 inches",stance:"Orthodox",
+dob:"3 November 1999",birthplace:"Australia",
+team:"City Kickboxing",style:"Striking / MMA",debut:"2024",
+bio:"Tom 'Big Train' Nolan is an Australian professional mixed martial artist competing in the UFC lightweight division. Known for his size, reach and striking ability, Nolan has developed into an increasingly dangerous contender. He trains at City Kickboxing and has built a strong run of performances since making his UFC debut in January 2024.",
+fights:[
+["Renato Moicano","UFC Fight Night · 31 October 2026","WIN · TKO · ROUND 3"],
+["Farès Ziam","UFC Fight Night · 6 June 2026","WIN · UNANIMOUS DECISION"],
+["Charlie Campbell","UFC Fight Night · 27 September 2025","WIN · SUBMISSION · ROUND 1"],
+["Viacheslav Borshchev","UFC 312 · 8 February 2025","WIN · UNANIMOUS DECISION"]
+]},
+{
+name:"Renato Moicano",nickname:"Money",country:"Brazil",
+division:"Lightweight",record:"21–8–1",kos:"2",weight:"155",
+height:"5'11\"",reach:"72 inches",stance:"Orthodox",
+dob:"21 May 1989",birthplace:"Brasília, Brazil",
+team:"American Top Team",style:"Brazilian Jiu-Jitsu",debut:"2014",
+bio:"Renato 'Money' Moicano is a Brazilian professional mixed martial artist known for his Brazilian jiu-jitsu, submission skills and technical striking. A veteran of the UFC featherweight and lightweight divisions, Moicano has faced many of the sport's most established names. His grappling and experience have made him a respected presence in the lightweight division.",
+fights:[
+["Tom Nolan","UFC Fight Night · 31 October 2026","LOSS · TKO · ROUND 3"],
+["Chris Duncan","UFC · 4 April 2026","WIN · SUBMISSION · ROUND 2"],
+["Beneil Dariush","UFC · 28 June 2025","WIN · UNANIMOUS DECISION"],
+["Benoît Saint Denis","UFC Fight Night · 28 September 2024","WIN · TKO · DOCTOR STOPPAGE"]
+]},
+{
+name:"Dan Hooker",nickname:"The Hangman",country:"New Zealand",
+division:"Lightweight",record:"24–15",kos:"11",weight:"155",
+height:"6'0\"",reach:"75 inches",stance:"Switch",
+dob:"13 February 1990",birthplace:"Auckland, New Zealand",
+team:"City Kickboxing",style:"Kickboxing / MMA",debut:"2014",
+bio:"Dan 'The Hangman' Hooker is a New Zealand professional mixed martial artist known for his toughness, striking and willingness to compete in high-paced battles. A long-time UFC lightweight, Hooker has faced numerous elite opponents and built a reputation as one of the division's most durable competitors. He trains at City Kickboxing in Auckland.",
+fights:[
+["Salahdine Parnasse","UFC Fight Night · 5 September 2026","LOSS · TKO · ROUND 1"],
+["Benoît Saint Denis","UFC 325 · 31 January 2026","LOSS · TKO · ROUND 2"],
+["Arman Tsarukyan","UFC Fight Night · 22 November 2025","LOSS · SUBMISSION · ROUND 2"],
+["Mateusz Gamrot","UFC 305 · 17 August 2024","WIN · SPLIT DECISION"]
+]},
+{
+name:"Grant Dawson",nickname:"KGD",country:"United States",
+division:"Lightweight",record:"25–3–1",kos:"5",weight:"155",
+height:"5'10\"",reach:"72 inches",stance:"Southpaw",
+dob:"20 February 1994",birthplace:"Cambria, Wisconsin",
+team:"American Top Team",style:"Wrestling / Brazilian Jiu-Jitsu",debut:"2017",
+bio:"Grant 'KGD' Dawson is an American professional mixed martial artist competing in the UFC lightweight division. Known for his wrestling-heavy approach, positional control and submission game, Dawson has developed into a difficult matchup for opponents. He has recorded 14 professional submission victories and trains at American Top Team.",
+fights:[
+["Nurullo Aliev","UFC · 24 October 2026","WIN · UNANIMOUS DECISION"],
+["Mateusz Rebecki","UFC · 9 May 2026","WIN · SUBMISSION · ROUND 3"],
+["Manuel Torres","UFC · 6 December 2025","LOSS · TKO · ROUND 1"],
+["Diego Ferreira","UFC 311 · 18 January 2025","WIN · UNANIMOUS DECISION"]
+]}
+];
+
+const fighterContainer = document.getElementById("additional-fighters");
+
+fighters.forEach((fighter, index) => {
+  const id = "fighter-" + (index + 1);
+
+  const hero = document.createElement("div");
+  hero.className = "hero";
+  hero.id = id;
+  hero.innerHTML = `
+    <div>
+      <div class="eyebrow">${fighter.country.toUpperCase()} · ${fighter.division.toUpperCase()}</div>
+      <h1>${fighter.name.toUpperCase()}</h1>
+      <p>Professional mixed martial arts fighter · ${fighter.weight} lbs</p>
+      <div class="record">
+        <div><strong>${fighter.record}</strong><small>PRO RECORD</small></div>
+        <div><strong>${fighter.kos}</strong><small>KO / TKO WINS</small></div>
+        <div><strong>${fighter.weight}</strong><small>POUNDS</small></div>
+      </div>
+    </div>
+  `;
+
+  const main = document.createElement("main");
+
+  const details = document.createElement("section");
+  details.innerHTML = `
+    <h2 class="section-title">Fighter details</h2>
+    <div class="stats">
+      <div class="stat"><small>Division</small><strong>${fighter.division}</strong></div>
+      <div class="stat"><small>Weight</small><strong>${fighter.weight} lbs</strong></div>
+      <div class="stat"><small>Height</small><strong>${fighter.height}</strong></div>
+      <div class="stat"><small>Reach</small><strong>${fighter.reach}</strong></div>
+      <div class="stat"><small>Stance</small><strong>${fighter.stance}</strong></div>
+      <div class="stat"><small>Nationality</small><strong>${fighter.country}</strong></div>
+      <div class="stat"><small>Date of birth</small><strong>${fighter.dob}</strong></div>
+      <div class="stat"><small>Birthplace</small><strong>${fighter.birthplace}</strong></div>
+      <div class="stat"><small>Team</small><strong>${fighter.team}</strong></div>
+      <div class="stat"><small>Fighting style</small><strong>${fighter.style}</strong></div>
+      <div class="stat"><small>UFC debut</small><strong>${fighter.debut}</strong></div>
+      <div class="stat"><small>KO / TKO wins</small><strong>${fighter.kos}</strong></div>
+    </div>
+  `;
+
+  const biography = document.createElement("section");
+  biography.innerHTML = `
+    <h2 class="section-title">Biography</h2>
+    <div class="bio">${fighter.bio}</div>
+  `;
+
+  const history = document.createElement("section");
+  history.innerHTML = `<h2 class="section-title">UFC fight history</h2>`;
+
+  fighter.fights.forEach(fight => {
+    const fightElement = document.createElement("div");
+    fightElement.className = "fight";
+    fightElement.innerHTML = `
+      <div><h3>${fight[0]}</h3><p>${fight[1]}</p></div>
+      <div class="result">${fight[2]}</div>
+    `;
+    history.appendChild(fightElement);
+  });
+
+  main.appendChild(details);
+  main.appendChild(biography);
+  main.appendChild(history);
+
+  fighterContainer.appendChild(hero);
+  fighterContainer.appendChild(main);
+});
+
+</script>
+
 <footer>
   MMA MEDIA
   <div class="disclosure">
+    UFC division rankings are a snapshot and may change after events and official ranking updates.
   </div>
 </footer>
 
