@@ -4,11 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="google-site-verification" content="H0ZS6fMXmqeoVIKF8ISfKIhSn3132TvZBllC0p6esVo">
-
 <title>MMA MEDIA | The Fighter Database</title>
-<meta name="description" content="Explore MMA fighters, profiles, biographies and fight records on MMA MEDIA.">
 
 <style>
 :root {
@@ -24,265 +21,231 @@
 body {
   margin: 0;
   background: var(--bg);
-  color: white;
+  color: #f5f5f5;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-  height: 76px;
-  padding: 0 7%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 25px 6%;
   border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 900;
   letter-spacing: 2px;
 }
 
 .logo span { color: var(--gold); }
 
-nav a {
-  color: #aaa;
-  text-decoration: none;
-  font-size: 13px;
-  margin-left: 22px;
+header small {
+  color: var(--muted);
+  letter-spacing: 2px;
 }
-
-nav a:hover { color: var(--gold); }
 
 .hero {
   text-align: center;
-  padding: 75px 20px 55px;
-  background: radial-gradient(ellipse at top, #292116 0%, #090909 65%);
-}
-
-.eyebrow {
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 4px;
-  font-weight: bold;
+  padding: 65px 20px 35px;
 }
 
 .hero h1 {
-  font-size: clamp(38px, 8vw, 65px);
-  margin: 15px 0;
-  letter-spacing: 2px;
+  font-size: clamp(35px, 6vw, 60px);
+  margin: 0 0 12px;
+  letter-spacing: 3px;
 }
 
 .hero h1 span { color: var(--gold); }
 
-.hero p {
-  color: #aaa;
-  font-size: 15px;
-}
+.hero p { color: var(--muted); }
 
-.search-wrap {
-  max-width: 620px;
-  margin: 35px auto 0;
-  position: relative;
-}
-
-.search-wrap input {
-  width: 100%;
-  padding: 19px 22px;
-  border-radius: 5px;
-  border: 1px solid #444;
-  background: #151515;
-  color: white;
-  font-size: 15px;
-  outline: none;
-}
-
-.search-wrap input:focus {
-  border-color: var(--gold);
-}
-
-main {
-  max-width: 1150px;
+.container {
+  max-width: 1200px;
   margin: auto;
-  padding: 35px 22px 80px;
+  padding: 20px;
 }
 
-.section-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 15px;
+.search {
+  width: 100%;
+  padding: 17px;
+  background: #171717;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 7px;
+  font-size: 16px;
+  outline: none;
   margin-bottom: 25px;
 }
 
-.section-heading h2 {
-  font-size: 19px;
-  letter-spacing: 1px;
-  margin: 0;
+.search:focus { border-color: var(--gold); }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
 }
 
-.section-heading span {
-  color: var(--gold);
-  font-size: 12px;
+.toolbar h2 {
+  font-size: 17px;
+  letter-spacing: 2px;
 }
 
-.fighter-grid {
+.toolbar span { color: var(--gold); }
+
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 25px;
+}
+
+.alphabet button {
+  background: #171717;
+  border: 1px solid var(--border);
+  color: #ccc;
+  padding: 7px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.alphabet button:hover {
+  background: var(--gold);
+  color: black;
+}
+
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 17px;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 14px;
 }
 
-.fighter-card {
+.card {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 5px;
-  overflow: hidden;
+  padding: 20px;
+  border-radius: 7px;
   cursor: pointer;
   transition: .2s;
 }
 
-.fighter-card:hover {
-  transform: translateY(-4px);
+.card:hover {
   border-color: var(--gold);
+  transform: translateY(-3px);
 }
 
-.card-image {
-  height: 155px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(145deg, #28231a, #111);
-  color: var(--gold);
-  font-size: 42px;
-  font-weight: 900;
-}
-
-.card-info { padding: 19px; }
-
-.card-info h3 {
-  margin: 0 0 8px;
-  font-size: 19px;
-}
-
-.card-info p {
-  color: var(--muted);
-  font-size: 12px;
-  margin: 0;
-}
-
-.view-profile {
-  display: inline-block;
-  margin-top: 17px;
-  color: var(--gold);
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-#profile-view { display: none; }
-
-.back-button {
-  background: none;
-  border: 1px solid #444;
-  color: white;
-  padding: 11px 17px;
-  cursor: pointer;
-  margin-bottom: 25px;
-}
-
-.back-button:hover { border-color: var(--gold); }
-
-.profile-top {
-  background: linear-gradient(120deg, #211b11, #111);
-  border: 1px solid var(--border);
-  padding: 40px 30px;
-  border-radius: 5px;
-  margin-bottom: 25px;
-}
-
-.profile-top .eyebrow { margin-bottom: 15px; }
-
-.profile-top h1 {
-  font-size: clamp(30px, 6vw, 48px);
-  margin: 0 0 12px;
-}
-
-.profile-top p { color: #aaa; }
-
-.profile-grid {
+.initials {
+  width: 48px;
+  height: 48px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
-  margin: 25px 0;
+  place-items: center;
+  background: #292317;
+  color: var(--gold);
+  font-weight: bold;
+  border-radius: 50%;
+  margin-bottom: 16px;
 }
 
-.stat {
+.card h3 { margin: 0 0 8px; }
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card .arrow {
+  color: var(--gold);
+  float: right;
+}
+
+.profile {
+  display: none;
   background: var(--panel);
   border: 1px solid var(--border);
-  padding: 20px;
+  border-radius: 8px;
+  padding: 30px;
+  margin-top: 20px;
 }
 
-.stat small {
+.back {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 25px;
+}
+
+.profile h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.profile .nickname {
+  color: var(--gold);
+  font-size: 18px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.detail {
+  background: #1c1c1c;
+  padding: 17px;
+  border-radius: 5px;
+}
+
+.detail small {
   display: block;
   color: var(--muted);
-  margin-bottom: 9px;
-  font-size: 11px;
-  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-.stat strong {
-  font-size: 18px;
-  color: var(--gold);
-}
+.detail strong { font-size: 16px; }
 
-.profile-section {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  padding: 25px;
-  margin-top: 17px;
-}
-
-.profile-section h2 {
-  color: var(--gold);
-  font-size: 16px;
-  margin-top: 0;
-}
-
-.profile-section p {
-  color: #bbb;
-  line-height: 1.7;
+.profile h2 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
 }
 
 .notice {
-  color: #999;
-  font-size: 12px;
+  color: var(--muted);
+  font-size: 13px;
   line-height: 1.6;
 }
 
 .empty {
-  color: #999;
+  color: var(--muted);
+  padding: 30px;
   text-align: center;
-  padding: 50px 10px;
-  grid-column: 1 / -1;
+  grid-column: 1/-1;
 }
 
 footer {
   text-align: center;
+  padding: 35px 15px;
+  margin-top: 60px;
   border-top: 1px solid var(--border);
-  padding: 30px 20px;
-  color: #777;
-  font-size: 11px;
-  line-height: 1.8;
+  color: var(--muted);
+  font-size: 12px;
 }
 
-footer strong { color: var(--gold); }
+footer span { color: var(--gold); }
 
-@media(max-width: 600px) {
-  header { padding: 0 18px; }
-  nav a { margin-left: 10px; font-size: 11px; }
-  .hero { padding: 60px 18px 45px; }
-  main { padding: 30px 16px 60px; }
+@media(max-width:600px) {
+  header { padding: 20px; }
+  header small { display: none; }
+  .profile { padding: 20px; }
 }
 </style>
 </head>
@@ -291,141 +254,242 @@ footer strong { color: var(--gold); }
 
 <header>
   <div class="logo">MMA <span>MEDIA</span></div>
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#fighters">FIGHTERS</a>
-  </nav>
+  <small>THE FIGHTER DATABASE</small>
 </header>
 
-<div id="home-view">
-  <section class="hero">
-    <div class="eyebrow">THE WORLD OF MIXED MARTIAL ARTS</div>
-    <h1>THE FIGHTER <span>DATABASE</span></h1>
-    <p>Explore fighters. Discover their stories. Follow their careers.</p>
+<section class="hero">
+  <h1>THE WORLD OF <span>MMA</span></h1>
+  <p>Explore the fighters. Discover their stories.</p>
+</section>
 
-    <div class="search-wrap">
-      <input
-        id="fighter-search"
-        type="search"
-        placeholder="Search fighters by name or nickname..."
-        autocomplete="off"
-      >
+<main class="container">
+
+  <section id="directory">
+    <input
+      id="search"
+      class="search"
+      type="search"
+      placeholder="Search fighters..."
+      autocomplete="off"
+    >
+
+    <div class="toolbar">
+      <h2>FIGHTER DIRECTORY</h2>
+      <span id="count">100 FIGHTERS</span>
     </div>
+
+    <div class="alphabet" id="alphabet"></div>
+    <div class="grid" id="fighters"></div>
   </section>
 
-  <main id="fighters">
-    <div class="section-heading">
-      <h2 id="list-heading">FIGHTER DATABASE</h2>
-      <span id="fighter-count"></span>
-    </div>
+  <section class="profile" id="profile"></section>
 
-    <div class="fighter-grid" id="fighter-grid"></div>
-  </main>
-</div>
-
-<div id="profile-view">
-  <main>
-    <button class="back-button" onclick="goHome()">← BACK TO FIGHTERS</button>
-    <div id="profile-content"></div>
-  </main>
-</div>
+</main>
 
 <footer>
-  <strong>MMA MEDIA</strong><br>
-  THE FIGHTER DATABASE<br><br>
-  Fighter information should be checked against reliable sources.
-  User-submitted and unverified information is identified accordingly.<br><br>
-  © 2026 MMA MEDIA
+  MMA <span>MEDIA</span> — THE FIGHTER DATABASE
+  <p>Records and fighter information should be independently verified.</p>
 </footer>
 
 <script>
-// ADD NEW FIGHTERS TO THIS DATABASE.
-// Only publish records and statistics once verified.
-
-const fighters = [
-  {
-    id: "ilia-topuria",
-    name: "Ilia Topuria",
-    nickname: "El Matador",
-    initials: "IT",
-    division: "Lightweight",
-    record: "Verify before publishing",
-    promotion: "UFC",
-    style: "Boxing / MMA",
-    hometown: "Halle, Germany",
-    bio: "A mixed martial arts fighter known for his technical boxing and finishing ability.",
-    history: []
-  },
-  {
-    id: "joshua-van",
-    name: "Joshua Van",
-    nickname: "The Fearless",
-    initials: "JV",
-    division: "Flyweight",
-    record: "Verify before publishing",
-    promotion: "UFC",
-    style: "MMA",
-    hometown: "Myanmar",
-    bio: "A mixed martial arts fighter competing in the flyweight division.",
-    history: []
-  },
-  {
-    id: "kamaru-usman",
-    name: "Kamaru Usman",
-    nickname: "The Nigerian Nightmare",
-    initials: "KU",
-    division: "Welterweight",
-    record: "Verify before publishing",
-    promotion: "UFC",
-    style: "Wrestling / MMA",
-    hometown: "Auchi, Nigeria",
-    bio: "A mixed martial arts fighter known for his wrestling and pressure.",
-    history: []
-  },
-  {
-    id: "kye-trimble",
-    name: "Kye Trimble",
-    nickname: "Turbo",
-    initials: "KT",
-    division: "Flyweight",
-    record: "Not independently verified",
-    promotion: "Community profile",
-    style: "Muay Thai / MMA",
-    hometown: "Birmingham, England",
-    bio: "A community-submitted fighter profile. The information on this page has been supplied by the profile owner and has not been independently verified.",
-    history: []
-  }
+const fighterNames = [
+"Aaron Pico",
+"Abdulmanap Nurmagomedov",
+"Adesanya Israel",
+"Adrian Yanez",
+"Alexander Gustafsson",
+"Alexander Volkanovski",
+"Alex Pereira",
+"Aljamain Sterling",
+"Alistair Overeem",
+"Amir Albazi",
+"Anderson Silva",
+"Anthony Johnson",
+"Arman Tsarukyan",
+"Arnold Allen",
+"Asu Almabayev",
+"Belal Muhammad",
+"Beneil Dariush",
+"Benoit Saint Denis",
+"Bo Nickal",
+"Brandon Moreno",
+"Brandon Royval",
+"Brian Ortega",
+"Cain Velasquez",
+"Caio Borralho",
+"Carlos Prates",
+"Charles Oliveira",
+"Charles Johnson",
+"Chris Weidman",
+"Cory Sandhagen",
+"Ciryl Gane",
+"Colby Covington",
+"Conor McGregor",
+"Cub Swanson",
+"Daniel Cormier",
+"Dan Hooker",
+"Deiveson Figueiredo",
+"Derrick Lewis",
+"Diego Lopes",
+"Dominick Cruz",
+"Dustin Poirier",
+"Drew Dober",
+"Edson Barboza",
+"Francis Ngannou",
+"Georges St-Pierre",
+"Gilbert Burns",
+"Henry Cejudo",
+"Islam Makhachev",
+"Ilia Topuria",
+"Jack Della Maddalena",
+"Jamahal Hill",
+"Jared Cannonier",
+"Jiri Prochazka",
+"Joanna Jedrzejczyk",
+"Joe Pyfer",
+"Jon Jones",
+"Jose Aldo",
+"Joshua Van",
+"Justin Gaethje",
+"Kamaru Usman",
+"Karine Silva",
+"Kayla Harrison",
+"Kevin Holland",
+"Khabib Nurmagomedov",
+"Kyoji Horiguchi",
+"Leon Edwards",
+"Manel Kape",
+"Max Holloway",
+"Merab Dvalishvili",
+"Michael Chandler",
+"Michael Bisping",
+"Michael Morales",
+"Michel Pereira",
+"Mirko Cro Cop",
+"Nate Diaz",
+"Nassourdine Imavov",
+"Nick Diaz",
+"Nick Newell",
+"Paulo Costa",
+"Paddy Pimblett",
+"Petr Yan",
+"Rafael Fiziev",
+"Randy Couture",
+"Robert Whittaker",
+"Robbie Lawler",
+"Rose Namajunas",
+"Sean O'Malley",
+"Sean Strickland",
+"Sergei Pavlovich",
+"Shavkat Rakhmonov",
+"Stephen Thompson",
+"Stipe Miocic",
+"Tai Tuivasa",
+"Tatiana Suarez",
+"Tom Aspinall",
+"Tony Ferguson",
+"Valentina Shevchenko",
+"Virna Jandiroba",
+"Zabit Magomedsharipov"
 ];
 
-const grid = document.getElementById("fighter-grid");
-const search = document.getElementById("fighter-search");
+// Correct the display order alphabetically.
+fighterNames.sort((a,b) => a.localeCompare(b));
 
-function renderFighters(list) {
-  grid.innerHTML = "";
+const fighters = fighterNames.map((name, index) => ({
+  id: "fighter-" + index,
+  name,
+  nickname: "Not yet verified",
+  division: "Not yet verified",
+  record: "Not yet verified",
+  promotion: "MMA",
+  style: "Not yet verified",
+  hometown: "Not yet verified",
+  bio: "Fighter profile awaiting independently verified information.",
+  community: false
+}));
 
-  document.getElementById("fighter-count").textContent =
-    list.length + (list.length === 1 ? " FIGHTER" : " FIGHTERS");
+// Community-submitted profile.
+fighters.push({
+  id: "kye-trimble",
+  name: "Kye Trimble",
+  nickname: "Turbo",
+  division: "Flyweight",
+  record: "Not independently verified",
+  promotion: "Community profile",
+  style: "Muay Thai / MMA",
+  hometown: "Birmingham, England",
+  bio: "A community-submitted fighter profile. Information supplied by the profile owner and not independently verified.",
+  community: true
+});
 
-  if (list.length === 0) {
-    grid.innerHTML = '<div class="empty">No fighters found. Try another name.</div>';
+fighters.sort((a,b) => a.name.localeCompare(b.name));
+
+const grid = document.getElementById("fighters");
+const search = document.getElementById("search");
+const directory = document.getElementById("directory");
+const profile = document.getElementById("profile");
+const count = document.getElementById("count");
+const alphabet = document.getElementById("alphabet");
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[char]);
+}
+
+function initials(name) {
+  return name.split(" ").map(part => part[0]).slice(0,2).join("").toUpperCase();
+}
+
+function renderAlphabet() {
+  alphabet.innerHTML = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(letter =>
+    `<button type="button" data-letter="${letter}">${letter}</button>`
+  ).join("");
+
+  alphabet.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", () => {
+      search.value = "";
+      renderFighters();
+      const letter = button.dataset.letter;
+      const first = [...grid.querySelectorAll(".card")]
+        .find(card => card.dataset.name.startsWith(letter));
+      if (first) first.scrollIntoView({behavior:"smooth", block:"center"});
+    });
+  });
+}
+
+function renderFighters() {
+  const query = search.value.toLowerCase().trim();
+
+  const filtered = fighters.filter(fighter =>
+    fighter.name.toLowerCase().includes(query) ||
+    fighter.nickname.toLowerCase().includes(query)
+  );
+
+  count.textContent = `${filtered.length} FIGHTERS`;
+
+  if (!filtered.length) {
+    grid.innerHTML = `<div class="empty">No fighters found.</div>`;
     return;
   }
 
-  list.forEach(fighter => {
-    const card = document.createElement("div");
-    card.className = "fighter-card";
-    card.onclick = () => openFighter(fighter.id);
+  grid.innerHTML = filtered.map(fighter => `
+    <article class="card" data-name="${escapeHTML(fighter.name)}"
+      data-id="${escapeHTML(fighter.id)}">
+      <div class="initials">${escapeHTML(initials(fighter.name))}</div>
+      <h3>${escapeHTML(fighter.name)}</h3>
+      <p>${escapeHTML(fighter.promotion)}</p>
+      <span class="arrow">→</span>
+    </article>
+  `).join("");
 
-    card.innerHTML = `
-      <div class="card-image">${fighter.initials}</div>
-      <div class="card-info">
-        <h3>${fighter.name}</h3>
-        <p>${fighter.nickname} · ${fighter.promotion}</p>
-        <span class="view-profile">VIEW PROFILE →</span>
-      </div>
-    `;
-
-    grid.appendChild(card);
+  grid.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => openFighter(card.dataset.id));
   });
 }
 
@@ -433,102 +497,84 @@ function openFighter(id) {
   const fighter = fighters.find(item => item.id === id);
   if (!fighter) return;
 
-  document.getElementById("home-view").style.display = "none";
-  document.getElementById("profile-view").style.display = "block";
+  directory.style.display = "none";
+  profile.style.display = "block";
 
-  const history = fighter.history.length
-    ? fighter.history.map(fight => `
-        <p>${fight.opponent} — ${fight.result} (${fight.method})</p>
-      `).join("")
-    : '<p>Fight history has not yet been added.</p>';
+  profile.innerHTML = `
+    <button class="back" id="backButton">← BACK TO DIRECTORY</button>
 
-  document.getElementById("profile-content").innerHTML = `
-    <div class="profile-top">
-      <div class="eyebrow">MMA MEDIA FIGHTER PROFILE</div>
-      <h1>${fighter.name}</h1>
-      <p>${fighter.nickname} · ${fighter.promotion}</p>
-    </div>
+    <div class="initials">${escapeHTML(initials(fighter.name))}</div>
+    <h1>${escapeHTML(fighter.name)}</h1>
+    <div class="nickname">${escapeHTML(fighter.nickname)}</div>
 
-    <div class="profile-grid">
-      <div class="stat">
-        <small>Record</small>
-        <strong>${fighter.record}</strong>
+    <div class="details">
+      <div class="detail">
+        <small>RECORD</small>
+        <strong>${escapeHTML(fighter.record)}</strong>
       </div>
-      <div class="stat">
-        <small>Division</small>
-        <strong>${fighter.division}</strong>
+      <div class="detail">
+        <small>DIVISION</small>
+        <strong>${escapeHTML(fighter.division)}</strong>
       </div>
-      <div class="stat">
-        <small>Fighting style</small>
-        <strong>${fighter.style}</strong>
+      <div class="detail">
+        <small>PROMOTION</small>
+        <strong>${escapeHTML(fighter.promotion)}</strong>
       </div>
-      <div class="stat">
-        <small>Hometown</small>
-        <strong>${fighter.hometown}</strong>
+      <div class="detail">
+        <small>FIGHTING STYLE</small>
+        <strong>${escapeHTML(fighter.style)}</strong>
+      </div>
+      <div class="detail">
+        <small>HOMETOWN</small>
+        <strong>${escapeHTML(fighter.hometown)}</strong>
       </div>
     </div>
 
-    <div class="profile-section">
-      <h2>BIOGRAPHY</h2>
-      <p>${fighter.bio}</p>
-    </div>
+    <h2>BIOGRAPHY</h2>
+    <p>${escapeHTML(fighter.bio)}</p>
 
-    <div class="profile-section">
-      <h2>FIGHT HISTORY</h2>
-      ${history}
-    </div>
+    <h2>FIGHT HISTORY</h2>
+    <p class="notice">Fight history has not yet been independently verified.</p>
 
+    <h2>PROFILE INFORMATION</h2>
     <p class="notice">
-      Profile information may be incomplete. Records and statistics
-      should be verified against reliable sources.
+      ${fighter.community
+        ? "Community-submitted profile. Information has not been independently verified."
+        : "This profile is awaiting verified records, statistics and biography information."}
     </p>
   `;
 
-  location.hash = "fighters/" + fighter.id;
-  window.scrollTo(0, 0);
+  document.getElementById("backButton").addEventListener("click", goHome);
+
+  history.pushState({fighter:id}, "", "#fighters/" + id);
+  window.scrollTo(0,0);
 }
 
 function goHome() {
-  location.hash = "home";
-  showHome();
+  profile.style.display = "none";
+  directory.style.display = "block";
+  history.pushState({}, "", location.pathname);
+  window.scrollTo(0,0);
 }
 
-function showHome() {
-  document.getElementById("home-view").style.display = "block";
-  document.getElementById("profile-view").style.display = "none";
-  window.scrollTo(0, 0);
-}
+search.addEventListener("input", renderFighters);
 
-function handleRoute() {
+window.addEventListener("popstate", () => {
   const id = location.hash.match(/^#fighters\/(.+)$/);
-
   if (id) {
     openFighter(id[1]);
   } else {
-    showHome();
+    profile.style.display = "none";
+    directory.style.display = "block";
   }
-}
-
-search.addEventListener("input", function() {
-  const term = this.value.toLowerCase().trim();
-
-  const filtered = fighters.filter(fighter =>
-    fighter.name.toLowerCase().includes(term) ||
-    fighter.nickname.toLowerCase().includes(term) ||
-    fighter.promotion.toLowerCase().includes(term)
-  );
-
-  document.getElementById("list-heading").textContent =
-    term ? "SEARCH RESULTS" : "FIGHTER DATABASE";
-
-  renderFighters(filtered);
 });
 
-window.addEventListener("hashchange", handleRoute);
+renderAlphabet();
+renderFighters();
 
-renderFighters(fighters);
-handleRoute();
+const initialRoute = location.hash.match(/^#fighters\/(.+)$/);
+if (initialRoute) openFighter(initialRoute[1]);
+
 </script>
-
 </body>
 </html>
